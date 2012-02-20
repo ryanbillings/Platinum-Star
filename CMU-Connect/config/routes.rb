@@ -15,6 +15,7 @@ CMUConnect::Application.routes.draw do
 
   match 'welcome' => 'home#welcome', :as => :welcome
 
+  resources :messages
   resources :sessions
 
   resources :users
