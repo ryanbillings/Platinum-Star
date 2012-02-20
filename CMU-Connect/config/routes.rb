@@ -13,9 +13,14 @@ CMUConnect::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => :login
 
+  match 'welcome' => 'home#welcome', :as => :welcome
+
   resources :sessions
 
   resources :users
+ 
+  root :to => 'home#welcome'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
