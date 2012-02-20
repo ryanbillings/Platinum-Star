@@ -1,0 +1,2 @@
+class RandoChatsController < ApplicationController
+end
