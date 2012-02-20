@@ -1,8 +1,8 @@
 class RandoChatsController < ApplicationController
 
   def create
-    if $rando_queue == 0
-      $rando_queue = 1
+    if $rando_queue == 1
+      $rando_queue = 0
       @rando_chat = RandoChat.find(:all, :order => "created_at DESC").first
       respond_to do |format|
         format.html { redirect_to @rando_chat, notice: 'Please wait for other chatter' }
@@ -11,7 +11,7 @@ class RandoChatsController < ApplicationController
     config_opentok
     session = @opentok.create_session request.remote_addr
     @rando_chat = RandoChat.new(:sessionId => session.session_id)
-    $rando_queue = 0 
+    $rando_queue = 1
     respond_to do |format|
       if @rando_chat.save
         format.html { redirect_to @rando_chat, notice: 'Start Chatting' }
