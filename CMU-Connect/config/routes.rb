@@ -15,9 +15,10 @@ CMUConnect::Application.routes.draw do
 
   match 'welcome' => 'home#welcome', :as => :welcome
 
+  match 'roulette' => 'rando_chats#create', :as => :roulette
   resources :messages
   resources :sessions
-
+  resources :rando_chats
   resources :users
  
   root :to => 'home#welcome'
