@@ -1,8 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Voces);
+
 body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
+  background-color: #cfe2ee;
+  font-family: 'Voces', Helvetica, Arial;
   font-size: 14px;
 }
+ 
 
 a img {
   border: none;
@@ -12,6 +15,10 @@ a {
   color: #0000FF;
 }
 
+p {
+	color: #404040;
+}
+
 .clear {
   clear: both;
   height: 0;
@@ -19,12 +26,12 @@ a {
 }
 
 #container {
-  width: 75%;
+  width: 800px;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px black;
   margin-top: 20px;
+  border-radius: 8px;
 }
 
 #flash_notice, #flash_error, #flash_alert {
