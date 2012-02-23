@@ -14,6 +14,12 @@ CMUConnect::Application.routes.draw do
   match 'login' => 'sessions#new', :as => :login
 
   match 'welcome' => 'home#welcome', :as => :welcome
+  
+  match 'landing' => 'home#landing', :as => :landing
+  
+  match 'privacy' => 'home#privacy', :as => :privacy
+  
+  match 'contact' => 'home#contact', :as => :contact
 
   match 'roulette' => 'rando_chats#create', :as => :roulette
   resources :messages
@@ -21,7 +27,7 @@ CMUConnect::Application.routes.draw do
   resources :rando_chats
   resources :users
  
-  root :to => 'home#welcome'
+  root :to => 'home#landing'
 
 
   # The priority is based upon order of creation:
