@@ -9,12 +9,25 @@
     <%= yield(:head) %>
   </head>
   <body>
+	
+	<div id="header">
+		<%= image_tag('logo.png') %>
+		<div id="navigation">
+				<%=render :partial => "partials/navigation" %>
+		</div>
+	</div>
+	
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+
+	
+		
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
+
+		<%=render :partial => "partials/footer" %>
     </div>
   </body>
 </html>
