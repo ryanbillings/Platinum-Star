@@ -25,6 +25,44 @@ p {
   overflow: hidden;
 }
 
+#header {
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#navigation {
+	float: right;
+}
+
+#navigation ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#navigation li
+{
+    float: left;
+	margin:  10px;
+}
+
+#navigation li a
+{
+	color: #404040;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 5px 10px;
+}
+
+#navigation li a:hover
+{
+	background-color: #00AEEF;
+	border-radius: 4px;
+	color: #cfe2ee;
+	padding: 5px 10px;
+}
+
 #container {
   width: 800px;
   margin: 0 auto;
@@ -32,6 +70,11 @@ p {
   padding: 20px 40px;
   margin-top: 20px;
   border-radius: 8px;
+}
+
+#footer {
+	text-align: center;
+	font-size: 11px;
 }
 
 #flash_notice, #flash_error, #flash_alert {

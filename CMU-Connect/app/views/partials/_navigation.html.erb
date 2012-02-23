@@ -4,14 +4,14 @@
 <div id="navigation">
 
 	<div id="copy">
-		<%= link_to 'Home', welcome_path %>
-		<%= link_to 'My Account', edit_user_path(current_user) %>
-		<%= link_to 'Social', messages_path %>
-		<%= link_to 'Professional', messages_path %>
-		<%= link_to 'Academic', messages_path %>
-		<%= link_to 'Privacy',  privacy_path %>
-		<%= link_to 'Contact Us', contact_path %>
-		<%= link_to 'Logout', logout_path %>
+		<ul>
+		<li><%= link_to 'Home', welcome_path %></li>
+		<li><%= link_to 'Social', messages_path %></li>
+		<li><%= link_to 'Professional', messages_path %></li>
+		<li><%= link_to 'Academic', messages_path %></li>
+		<li><%= link_to 'My Account', edit_user_path(current_user) %></li>	
+		<li><%= link_to 'Logout', logout_path %></li>
+		<ul>
 	</div>
 
 </div>
