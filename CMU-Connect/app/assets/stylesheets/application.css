@@ -73,6 +73,21 @@ p {
   border-radius: 8px;
 }
 
+#message-button {
+	width: 200px;
+	height: 200px;
+	background-color: #F8F8F8;
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	margin: 10px;
+	float: left;
+}
+
+#message-button a{
+
+}
+
 #footer {
 	text-align: center;
 	font-size: 11px;
