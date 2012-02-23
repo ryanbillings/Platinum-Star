@@ -33,6 +33,7 @@ p {
 
 #navigation {
 	float: right;
+	padding-top: 15px;
 }
 
 #navigation ul{
