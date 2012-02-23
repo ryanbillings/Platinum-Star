@@ -22,9 +22,15 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to root_url, :notice => "Your profile has been updated."
+      redirect_to root_url, :notice => "Your account has been updated."
     else
       render :action => 'edit'
     end
+  end
+  
+  def destroy
+     @user = User.find(params[:id])
+     @user.destroy
+     redirect_to :landing, :notice => "Your account has been deleted."
   end
 end

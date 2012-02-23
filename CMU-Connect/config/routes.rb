@@ -20,6 +20,8 @@ CMUConnect::Application.routes.draw do
   match 'privacy' => 'home#privacy', :as => :privacy
   
   match 'contact' => 'home#contact', :as => :contact
+  
+  match 'destroy' => 'users#destroy', :as => :delete_account
 
   match 'roulette' => 'rando_chats#create', :as => :roulette
   resources :messages
