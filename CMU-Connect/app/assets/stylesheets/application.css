@@ -1,8 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Voces);
+
 body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
+  background-color: #cfe2ee;
+  font-family: 'Voces', Helvetica, Arial;
   font-size: 14px;
 }
+ 
 
 a img {
   border: none;
@@ -12,34 +15,134 @@ a {
   color: #0000FF;
 }
 
+p {
+	color: #404040;
+}
+
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
+#header {
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#navigation {
+	float: right;
+	padding-top: 15px;
+}
+
+#navigation ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#navigation li
+{
+    float: left;
+	margin:  10px;
+}
+
+#navigation li a
+{
+	color: #404040;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 5px 10px;
+}
+
+#navigation li a:hover
+{
+	background-color: #00AEEF;
+	border-radius: 4px;
+	color: #cfe2ee;
+	padding: 5px 10px;
+}
+
 #container {
-  width: 75%;
+  width: 800px;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px black;
   margin-top: 20px;
+  border-radius: 8px;
+}
+
+#message-button {
+	width: 200px;
+	height: 200px;
+	background-color: #F8F8F8;
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	margin: 10px;
+	float: left;
+}
+
+#message-button a{
+
+}
+
+#new_message {
+	
+}
+
+#random_chat_links {
+	float:right;
+	border-radius: 5px;
+	background-color: #009900;
+	padding: 10px 20px;
+}
+#random_chat_links a{
+	color: #FFF;
+	font-size: 18px;
+	position: relative;
+	padding: 10px; 
+	top: -20px
+	}
+
+#text_chat_area {
+	float:left;
+}
+
+
+#chat {
+	width: 230px;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+#chat li {
+	list-style-type: none;
+	border-radius: 2px;
+	background-color: #F8F8F8;
+	padding: 5px;
+	margin-left: 0;
+	margin: 2px;
+}
+
+#footer {
+	text-align: center;
+	font-size: 11px;
 }
 
 #flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
+  padding: 8px 12px;
   margin: 10px 0;
+  border-radius: 5px;
 }
 
 #flash_notice {
   background-color: #CFC;
-  border: solid 1px #6C6;
 }
 
 #flash_error, #flash_alert {
   background-color: #FCC;
-  border: solid 1px #C66;
 }
 
 .fieldWithErrors {

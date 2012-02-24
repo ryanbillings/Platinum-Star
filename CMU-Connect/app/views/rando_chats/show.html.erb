@@ -1,15 +1,23 @@
 <%= stylesheet_link_tag "tokbox_layout", :media => "all" %>
 <%= javascript_include_tag "tokbox_layout" %>
-<p id="notice"><%= notice %></p>
+<div id = "nextdiv">
+  <p>
+    How did you like your chat?
+    <ul>
+       <li><%= link_to "Good, send them my Info!", :roulette %></li>
+       <li><%= link_to "I'd rather not disclose my info", :roulette %></li>
+       <li><%= link_to "I'd like to report inappropriate behavior", :root %></li>
+    </ul>
+  </p>
+</div>
+<div id = "rando_content">
+<h1>Welcome to Random Social Chat!</h1>
+
 <div id="videobox">
+	<h2>You:</h2>
 
 </div>
-<div>
-<a href = "#" onclick="disconnect()">Disconnect</a>
-<a href = "#" onclick="next()">Next</a>
-<div id = "nextdiv" style = "visibility:hidden;">
-How did you like your chat?
-</div>
+<h2>Them:</h2>
 <script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
 <script type="text/javascript">
         var apiKey = 11368202; 
@@ -34,7 +42,13 @@ How did you like your chat?
   
         function next() {
           disconnect();
-          document.getElementById('nextdiv').style.visibility = 'visible';
+          document.getElementById('nextdiv').style.display = 'block';
+          document.getElementById('rando_content').style.display = 'none';
         }
 </script>
-<a href = "#">Report to Admin</a>
+  <div>
+    <a href = "#" onclick="disconnect()">Disconnect</a>
+    <a href = "#" onclick="next()">Next</a>
+    <a href = "#">Report to Admin</a>
+  </div>
+</div>

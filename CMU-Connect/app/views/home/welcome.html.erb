@@ -1,4 +1,18 @@
-<h1>Welcome</h1>
-<div>To CMU Connect</div>
+<h1>Welcome, <%= current_user.username%>!</h1>
+<p>To begin chatting with other Tartans, select one of the links below:</p>
 
-<p>Click <%= link_to "Here", 'messages' %> to go to Rando Chat Hub</p>
+	<div id="message-button">
+		<h2>Social</h2>
+		<%=  link_to image_tag('social.png'), 'messages' %> 
+	</div>
+	
+	<div id="message-button">
+		<h2>Professional</h2>
+		<%=  link_to image_tag('professional.png'), 'messages' %> 
+	</div>
+	
+	<div id="message-button">
+		<h2>Academic</h2>
+		<%=  link_to image_tag('academic.png'), 'messages' %> 
+	</div>
+
