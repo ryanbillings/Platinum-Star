@@ -9,7 +9,7 @@ class RandoChatsController < ApplicationController
       end
     else
     config_opentok
-    session = @opentok.create_session request.remote_addr
+    session = @opentok.create_session(request.remote_addr,Hash.new("p2p.preferences"=>"enabled"))
     @rando_chat = RandoChat.new(:sessionId => session.session_id)
     $rando_queue = 1
     respond_to do |format|

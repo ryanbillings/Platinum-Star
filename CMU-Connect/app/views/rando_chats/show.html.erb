@@ -4,7 +4,12 @@
 <div id="videobox">
 
 </div>
-
+<div>
+<a href = "#" onclick="disconnect()">Disconnect</a>
+<a href = "#" onclick="next()">Next</a>
+<div id = "nextdiv" style = "visibility:hidden;">
+How did you like your chat?
+</div>
 <script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
 <script type="text/javascript">
         var apiKey = 11368202; 
@@ -21,5 +26,15 @@
         session.addEventListener('streamDestroyed', streamDestroyedHandler);
 
         session.connect(apiKey,token);
-</script>
 
+   	function disconnect() {
+	  session.disconnect();
+          session.cleanup();
+	}
+  
+        function next() {
+          disconnect();
+          document.getElementById('nextdiv').style.visibility = 'visible';
+        }
+</script>
+<a href = "#">Report to Admin</a>
