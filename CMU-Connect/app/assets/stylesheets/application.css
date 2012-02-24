@@ -95,11 +95,11 @@ p {
 #random_chat_links {
 	float:right;
 	border-radius: 5px;
-	background-color: #F8F8F8;
+	background-color: #009900;
 	padding: 10px 20px;
 }
 #random_chat_links a{
-	color: #666;
+	color: #FFF;
 	font-size: 18px;
 	position: relative;
 	padding: 10px; 
