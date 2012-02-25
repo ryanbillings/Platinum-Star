@@ -73,7 +73,7 @@ p {
   border-radius: 8px;
 }
 
-#message-button {
+.message-button {
 	width: 205px;
 	height: 200px;
 	background-color: #F8F8F8;
@@ -83,6 +83,10 @@ p {
 	margin: 10px;
 	float: left;
 	color: #000;
+}
+
+.message-button:hover {
+	background-color: #FBF8EF;
 }
 
 #twitter {
@@ -129,9 +133,6 @@ p {
 	margin: 4px;
 }
 
-#textbox{
-
-}
 
 #footer {
 	text-align: center;

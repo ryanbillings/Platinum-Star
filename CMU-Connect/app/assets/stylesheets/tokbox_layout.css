@@ -15,12 +15,42 @@
 
 #nextdiv {
   width: 800px;
-  height: 300px;
-  background-color: gray;
-  border: 1px solid black;
+  height: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #C8C8C8;
+  border: 1px solid #989898;
   display: none;
   font-size: 16px;
   text-align: center;
+}
+
+#disconnectdiv {
+  width: 800px;
+  height: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #C8C8C8;
+  border: 1px solid #989898;
+  display: none;
+  font-size: 16px;
+  text-align: center;
+}
+
+.afterchat-button {
+	width: 205px;
+	height: 200px;
+	background-color: #F8F8F8;
+	border-radius: 6px;
+	text-align: center;
+	padding: 20px;
+	margin: 10px;
+	float: left;
+	color: #000;
+}
+
+.afterchat-button:hover {
+	background-color: #FFF;
 }
 
 

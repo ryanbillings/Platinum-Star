@@ -2,15 +2,58 @@
 <%= javascript_include_tag "tokbox_layout" %>
 <div id = "nextdiv">
   <p>
-    How did you like your chat?
-    <ul>
-       <li><%= link_to "Good, send them my Info!", :roulette %></li>
-       <li><%= link_to "I'd rather not disclose my info", :roulette %></li>
-       <li><%= link_to "I'd like to report inappropriate behavior", :root %></li>
-    </ul>
+    <h2>You're chat just ended. How did you like it?</h2>
+		<%= link_to :roulette do %>
+			<div class="afterchat-button">
+				<h3>Good, send them my Info!</h3>
+				<%= image_tag('yes.png')%> 
+			</div>
+		<% end %>
+		
+		<%= link_to :roulette do %>
+			<div class="afterchat-button">
+				<h3>Please don't disclose my info</h3>
+				<%= image_tag('no.png')%> 
+			</div>
+		<% end %>
+		
+		<%= link_to :roulette do %>
+			<div class="afterchat-button">
+				<h3>Report inappropriate behavior</h3>
+				<%= image_tag('report.png')%> 
+			</div>
+		<% end %>
   </p>
 </div>
+
+<div id = "disconnectdiv">
+  <p>
+    <h2>You're chat just ended. How did you like it?</h2>
+		<%= link_to :messages do %>
+			<div class="afterchat-button">
+				<h3>Good, send them my Info!</h3>
+				<%= image_tag('yes.png')%> 
+			</div>
+		<% end %>
+		
+		<%= link_to :messages do %>
+			<div class="afterchat-button">
+				<h3>Please don't disclose my info</h3>
+				<%= image_tag('no.png')%> 
+			</div>
+		<% end %>
+		
+		<%= link_to :messages do %>
+			<div class="afterchat-button">
+				<h3>Report inappropriate behavior</h3>
+				<%= image_tag('report.png')%> 
+			</div>
+		<% end %>
+  </p>
+</div>
+
 <div id = "rando_content">
+	
 <h1>Welcome to Random Social Chat!</h1>
 
 <div id="videobox">
@@ -38,10 +81,13 @@
    	function disconnect() {
 	  session.disconnect();
           session.cleanup();
+		document.getElementById('disconnectdiv').style.display = 'block';
+          document.getElementById('rando_content').style.display = 'none';
 	}
   
         function next() {
-          disconnect();
+          session.disconnect();
+		  session.cleanup();
           document.getElementById('nextdiv').style.display = 'block';
           document.getElementById('rando_content').style.display = 'none';
         }
