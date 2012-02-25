@@ -73,20 +73,27 @@ p {
   border-radius: 8px;
 }
 
-#message-button {
+.message-button {
 	width: 205px;
-	height: 200px;
+	height: 180px;
 	background-color: #F8F8F8;
 	border-radius: 6px;
 	text-align: center;
 	padding: 20px;
 	margin: 10px;
+	margin-bottom: 40px;
 	float: left;
 	color: #000;
 }
 
+.message-button:hover {
+	background-color: #FBF8EF;
+}
+
 #twitter {
+	
 	margin: 10px;
+	margin-top: 20px;
 }
 
 
@@ -126,12 +133,9 @@ p {
 	border-radius: 4px;
 	background-color: #F8F8F8;
 	padding: 5px;
-	margin: 4px;
+	margin: 5px 5px 5px 0px;
 }
 
-#textbox{
-
-}
 
 #footer {
 	text-align: center;
