@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 $(function() {
-  var faye = new Faye.Client('http://192.168.1.136:9292/faye');
+  var faye = new Faye.Client('http://128.237.241.183:9292/faye');
   faye.subscribe("/messages/new", function(data) {
     eval(data);
   });
