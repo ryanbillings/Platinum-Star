@@ -90,8 +90,8 @@ p {
 }
 
 
-#new_message {
-	
+#message_content {
+	width: 388px;
 }
 
 #random_chat_links {
@@ -114,9 +114,8 @@ p {
 
 
 #chat {
-	width: 230px;
+	width: 400px;
 	border-radius: 5px;
-	margin: 10px;
     height: 300px;
         overflow-y: scroll;
 	border: 1px #777 solid;
@@ -124,11 +123,10 @@ p {
 
 #chat li {
 	list-style-type: none;
-	border-radius: 2px;
+	border-radius: 4px;
 	background-color: #F8F8F8;
 	padding: 5px;
-	margin-left: 0;
-	margin: 2px;
+	margin: 4px;
 }
 
 #textbox{
