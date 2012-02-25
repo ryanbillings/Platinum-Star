@@ -5,6 +5,16 @@ body {
   font-family: 'Voces', Helvetica, Arial;
   font-size: 14px;
 }
+
+#container {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
  
 
 a img {
@@ -64,14 +74,7 @@ p {
 	padding: 5px 10px;
 }
 
-#container {
-  width: 800px;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  margin-top: 20px;
-  border-radius: 8px;
-}
+
 
 .message-button {
 	width: 205px;
