@@ -41,6 +41,7 @@ class UsersController < ApplicationController
   
   def destroy
      @user = User.find(params[:id])
+     session[:user_id] = nil
      @user.destroy
      redirect_to :landing, :notice => "Your account has been deleted."
   end
