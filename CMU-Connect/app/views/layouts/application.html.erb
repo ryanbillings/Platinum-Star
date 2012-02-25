@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+	<link rel="shortcut icon" href="/assets/favicon.ico" />
+    <title><%= content_for?(:title) ? yield(:title) : "CMU Connect" %></title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "http://localhost:9292/faye.js" %>
+    <%= javascript_include_tag "http://192.168.1.136:9292/faye.js" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
   <body>
 	
 	<div id="header">
-		<%= image_tag('logo.png') %>
+		<%= link_to image_tag('logo.png'), :welcome %>
 		<div id="navigation">
 				<%=render :partial => "partials/navigation" %>
 		</div>
