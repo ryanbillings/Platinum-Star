@@ -1,7 +1,8 @@
-#videobox {
-	width: 200px;
-	height: 400px;
+#container {
+	height: 600px;
+}
 
+#videobox {
 	max-width: 800px;
 	max-height: 600px;
 
@@ -11,6 +12,13 @@
 
 #videobox object {
 	float: left;
+	width: 500px;
+	height: 360px;
+}
+
+#videobox object:nth-child(2) {
+	width: 300px;
+	height: 200px;
 }
 
 #nextdiv {
@@ -53,4 +61,8 @@
 	background-color: #FFF;
 }
 
+#randochat-options {
+	display: block;
+	float: left;
+}
 
