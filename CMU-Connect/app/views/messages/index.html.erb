@@ -9,10 +9,11 @@
 
 	<h2>Random Chatroom</h2>
 
+<div id="textbox">
 	<ul id="chat">
 	  <%= render @messages %>
 	</ul>
-
+</div>
 	<%= form_for Message.new, :remote => true do |f| %>
 	  <%= f.hidden_field :user_id, :value => current_user.id %>
 	  <%= f.text_field :content %>

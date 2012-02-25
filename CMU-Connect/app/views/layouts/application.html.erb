@@ -5,7 +5,11 @@
     <title><%= content_for?(:title) ? yield(:title) : "CMU Connect" %></title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
+<<<<<<< HEAD
     <%= javascript_include_tag "http://128.237.241.183:9292/faye.js" %>
+=======
+    <%= javascript_include_tag "http://128.237.237.228:9292/faye.js" %>
+>>>>>>> added twitter
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>

@@ -74,7 +74,7 @@ p {
 }
 
 #message-button {
-	width: 200px;
+	width: 205px;
 	height: 200px;
 	background-color: #F8F8F8;
 	border-radius: 6px;
@@ -82,11 +82,13 @@ p {
 	padding: 20px;
 	margin: 10px;
 	float: left;
+	color: #000;
 }
 
-#message-button a{
-
+#twitter {
+	margin: 10px;
 }
+
 
 #new_message {
 	
@@ -126,6 +128,12 @@ p {
 	padding: 5px;
 	margin-left: 0;
 	margin: 2px;
+}
+
+#textbox{
+	height: 200px;
+	width: 200px;
+	border: 1px solid;
 }
 
 #footer {
