@@ -16,6 +16,7 @@ body {
 }
 
 #login-header{
+	margin-top: 30px;
 	text-align: right;
 	font-size: 12px;
 	width: 90%;
@@ -34,7 +35,7 @@ body {
 	top:50%; 
 	height:10em; 
 	margin-top:-2em; 
-	margin-left:450px;
+	margin-left:500px;
 	font-size: 26px;
 	width: 400px;
 }
