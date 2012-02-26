@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="shortcut icon" href="/assets/favicon.ico" />
+    <title><%= content_for?(:title) ? yield(:title) : "CMU Connect" %></title>
+    <%= stylesheet_link_tag "landing" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "http://localhost:9292/faye.js" %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+	<script>
+		$(document).ready(function(){
+		  $("label").inFieldLabels();
+		});
+	</script>
+  </head>
+  <body>
+	
+	<div id="header">
+		<div id="login-header">
+		<%= form_tag sessions_path do %>
+		  <p>
+		    <%= label_tag :login, "Username or Email Address" %>
+		    <%= text_field_tag :login, params[:login] %>
+		
+			
+		    <%= label_tag :password %>
+		    <%= password_field_tag :password %>
+		  <%= submit_tag "Log in" %>
+		</p>
+		<% end %>
+		</div>
+	</div>
+	
+	
+	<div id="container">
+			<%= image_tag('biglogo.png') %>
+		<p id="landing-message">
+			We are changing the way	the CMU community interacts.
+		</p>
+		
+    </div>
+
+	<div id="outer-footer">
+		<%=render :partial => "partials/footer" %>
+	</div>
+
+  </body>
+</html>

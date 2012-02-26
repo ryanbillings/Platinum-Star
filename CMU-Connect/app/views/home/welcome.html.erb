@@ -1,18 +1,62 @@
-<h1>Welcome, <%= current_user.username%>!</h1>
+<h1>Welcome, <%= current_user.first_name%>!</h1>
 <p>To begin chatting with other Tartans, select one of the links below:</p>
 
-	<div id="message-button">
-		<h2>Social</h2>
-		<%=  link_to image_tag('social.png'), 'messages' %> 
-	</div>
+		<%= link_to('messages') do %>
+			<div class="message-button">
+				<h2>Social</h2>
+				<%= image_tag('social.png')%> 
+			</div>
+		<% end %>
+
+		<%= link_to('messages') do %>
+			<div class="message-button">
+				<h2>Professional</h2>
+				<%= image_tag('professional.png')%> 
+			</div>
+		<% end %>
+
+		<%= link_to('messages') do %>
+			<div class="message-button">
+				<h2>Academic</h2>
+				<%= image_tag('academic.png')%> 
+			</div>
+		<% end %>
+
+
+
+
+	<div id="twitter">
+		<h2>CMU Connect's Themed Chats</h2>
+		
+		<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+			<script>
+			new TWTR.Widget({
+			  version: 2,
+			  type: 'profile',
+			  rpp: 4,
+			  interval: 30000,
+			  width: 775,
+			  height: 200,
+			  theme: {
+			    shell: {
+			      background: '#cfe2ee',
+			      color: '#000000'
+			    },
+			    tweets: {
+			      background: '#ffffff',
+			      color: '#000000',
+			      links: '#00afef'
+			    }
+			  },
+			  features: {
+			    scrollbar: false,
+			    loop: false,
+			    live: false,
+			    behavior: 'all'
+			  }
+			}).render().setUser('CMU_Connect').start();
+			</script>
+		</div>
+
 	
-	<div id="message-button">
-		<h2>Professional</h2>
-		<%=  link_to image_tag('professional.png'), 'messages' %> 
-	</div>
-	
-	<div id="message-button">
-		<h2>Academic</h2>
-		<%=  link_to image_tag('academic.png'), 'messages' %> 
-	</div>
 
