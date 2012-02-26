@@ -1,0 +1,19 @@
+<% title "Complaints" %>
+
+<table>
+  <tr>
+    <th>Username</th>
+	<th>Deacription</th>
+    
+  </tr>
+  <% for complaint in @complaints %>
+    <tr>
+	  <td><%= complaint.user_id.username %></td>
+	  
+	  <td><%= link_to "Show", complaint %></td>
+      <td><%= link_to "Destroy", complaint, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Complaint", new_complaint_path %></p>

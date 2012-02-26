@@ -1,8 +1,12 @@
 CMUConnect::Application.routes.draw do
-  resources :theme_chats
+
+
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :surveys
-
+  resources :complaints
   resources :conferences
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
@@ -24,6 +28,8 @@ CMUConnect::Application.routes.draw do
   match 'destroy' => 'users#destroy', :as => :delete_account
 
   match 'roulette' => 'rando_chats#create', :as => :roulette
+  
+  match 'complaint' => 'complaints#index', :as => :complaint
   resources :messages
   resources :sessions
   resources :rando_chats
