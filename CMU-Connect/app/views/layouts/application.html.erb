@@ -27,8 +27,9 @@
 		
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
-
+	<div id="outer-footer">
 		<%=render :partial => "partials/footer" %>
+	</div>
     </div>
   </body>
 </html>

@@ -108,16 +108,25 @@ p {
 #random_chat_links {
 	float:right;
 	border-radius: 5px;
-	background-color: #009900;
-	padding: 10px 20px;
+	background-color: #5BB75B;
+	background-image: -moz-linear-gradient(center top , #62C462, #51A351);
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1);
+	padding: 15px 20px;
 }
+
+#random_chat_links img{
+	vertical-align:middle;
+}
+
 #random_chat_links a{
 	color: #FFF;
 	font-size: 18px;
 	position: relative;
-	padding: 10px; 
-	top: -20px
-	}
+	padding-left: 15px;
+	vertical-align:middle;
+	
+}
 
 #text_chat_area {
 	float:left;
@@ -141,10 +150,20 @@ p {
 }
 
 
-#footer {
-	text-align: center;
-	font-size: 11px;
+#outer-footer{
+	width: 100%;
+	bottom: 0;
 }
+
+#footer {
+	font-size: 10px;
+	text-align: center;
+	padding: 20px 0px;
+	width: 50%;
+	margin: 0px auto;
+}
+
+
 
 #flash_notice, #flash_error, #flash_alert {
   padding: 8px 12px;
@@ -190,4 +209,50 @@ p {
 
 .error_messages ul {
   margin: 0;
+}
+
+.bold {
+	font-weight:bold;
+}
+
+
+
+.delete-button a{
+	font-size: 12px;
+	border-radius: 4px;
+	border: 1px solid #980000 ;
+	padding: 5px 10px;
+	background-color: #DA4F49;
+	background-image: -moz-linear-gradient(center top , #EE5F5B, #BD362F);
+	color: #fff;
+	text-decoration: none;
+	margin-top: 20px;
+}
+
+.delete-button a:hover {
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+input{
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	padding: 5px;
+	margin-right: 5px;
+}
+
+input[name=commit]{
+	font-size: 12px;
+	border-radius: 4px;
+	border: 1px solid #104E8B;
+	padding: 5px 10px;
+	background-color: #49AFCD;
+	background-image: -moz-linear-gradient(center top , #5BC0DE, #2F96B4);
+	color: #fff;
+	text-decoration: none;
+}
+
+input[name=commit]a:hover {
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
