@@ -22,6 +22,24 @@ body {
 	width: 90%;
 }
 
+#login-header input{
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	padding: 5px;
+	margin-right: 5px;
+	width: 110px;
+}
+
+#login-header [type=submit]{
+	padding: 4px;
+	width: 50px;
+}
+
+#login-header a{
+	font-size: 11px;
+	margin-left: 5px;	
+}
+
 #container img{
 	position:absolute; 
 	top:50%;
