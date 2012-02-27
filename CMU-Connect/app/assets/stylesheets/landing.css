@@ -48,10 +48,12 @@ body {
 
 #footer {
 	font-size: 10px;
-
 	text-align: center;
 	padding: 20px 0px;
 	width: 50%;
 	margin: 0px auto;
+}
+
+.input-form {
 	
 }
