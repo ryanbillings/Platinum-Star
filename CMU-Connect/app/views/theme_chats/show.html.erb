@@ -1,0 +1,28 @@
+<% title "Theme Chat" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @theme_chat.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @theme_chat.description %>
+</p>
+<p>
+  <strong>Start Date:</strong>
+  <%= @theme_chat.start_date %>
+</p>
+<p>
+  <strong>End Date:</strong>
+  <%= @theme_chat.end_date %>
+</p>
+<p>
+  <strong>Sessionid:</strong>
+  <%= @theme_chat.sessionId %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_theme_chat_path(@theme_chat) %> |
+  <%= link_to "Destroy", @theme_chat, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", theme_chats_path %>
+</p>

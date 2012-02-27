@@ -1,0 +1,23 @@
+<div id="chatbox" class="login">
+	<h1>Random Chat Lobby</h1>
+
+	<p>You can engage in either Random Video Chat with complete strangers, public Themed Video Chat, or text chat with other users in the lobby.</p>
+
+
+	<h2>Random Chatroom</h2>
+
+	<div id="random_chat_links">
+		<%= image_tag("random.png") %> <%= link_to "Enter Random Chat!", :roulette %>
+	</div>
+
+	<div id="textbox">
+		<ul id="chat">
+		  <%= render @messages %>
+		</ul>
+	</div>
+		<%= form_for Message.new, :remote => true do |f| %>
+		  <%= f.hidden_field :user_id, :value => current_user.id %>
+		  <%= f.text_field :content %>
+		  <%= f.submit "Send" %>
+		<% end %>
+</div><!-- end chatbox -->

@@ -1,0 +1,27 @@
+<% title "Conferences" %>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Public</th>
+    <th>Sessionid</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Host</th>
+  </tr>
+  <% for conference in @conferences %>
+    <tr>
+      <td><%= conference.date %></td>
+      <td><%= conference.public %></td>
+      <td><%= conference.sessionId %></td>
+      <td><%= conference.name %></td>
+      <td><%= conference.description %></td>
+      <td><%= conference.host_id %></td>
+      <td><%= link_to "Show", conference %></td>
+      <td><%= link_to "Edit", edit_conference_path(conference) %></td>
+      <td><%= link_to "Destroy", conference, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Conference", new_conference_path %></p>

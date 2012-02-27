@@ -1,0 +1,15 @@
+one:
+  date: 2012-02-19 20:07:12
+  public: false
+  sessionId: MyString
+  name: MyString
+  description: MyText
+  host_id: 
+
+two:
+  date: 2012-02-19 20:07:12
+  public: false
+  sessionId: MyString
+  name: MyString
+  description: MyText
+  host_id: 
