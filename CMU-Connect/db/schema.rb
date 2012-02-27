@@ -91,6 +91,9 @@ ActiveRecord::Schema.define(:version => 20120220011203) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "role"
+    t.string   "major"
+    t.string   "grade"
+    t.string   "gender"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

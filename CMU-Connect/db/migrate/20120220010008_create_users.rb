@@ -9,6 +9,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :role
+      t.string :major
+      t.string :grade
+      t.string :gender
       t.timestamps
     end
   end

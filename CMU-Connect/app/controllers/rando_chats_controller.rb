@@ -4,9 +4,9 @@ class RandoChatsController < ApplicationController
     if $rando_queue == 1
       $rando_queue = 0
       @rando_chat = RandoChat.find(:all, :order => "created_at DESC").first
-      respond_to do |format|
-        format.html { redirect_to @rando_chat, notice: 'Please wait for other chatter' }
-      end
+        respond_to do |format|
+          format.html { redirect_to @rando_chat, notice: 'Please wait for other chatter' }
+        end
     else
     config_opentok
     session = @opentok.create_session(request.remote_addr,Hash.new("p2p.preferences"=>"enabled"))

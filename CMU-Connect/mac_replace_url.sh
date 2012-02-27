@@ -1,4 +1,4 @@
-IP_ADDRESS=`ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`
+IP_ADDRESS='localhost'
 cd app
 cd helpers
 sed -i '' "s/[0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}/$IP_ADDRESS/g" application_helper.rb

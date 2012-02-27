@@ -1,7 +1,38 @@
+<<<<<<< HEAD
 <h1>Welcome, <%= current_user.username%>!</h1>
 <p>Check out the News Feed for upcoming events. To begin chatting with other Tartans, click on the "Social", "Professional", or "Academic" portal below. </p>
+=======
+<h1>Welcome, <%= current_user.first_name%>!</h1>
+<p>To begin chatting with other Tartans, select one of the links below:</p>
+>>>>>>> 7ac26d6d77be2bb2e0848c0dc34359f076fb7057
+
+		<%= link_to('messages') do %>
+			<div class="message-button">
+				<h2>Social</h2>
+				<%= image_tag('social.png')%> 
+			</div>
+		<% end %>
+
+		<%= link_to('messages') do %>
+			<div class="message-button">
+				<h2>Professional</h2>
+				<%= image_tag('professional.png')%> 
+			</div>
+		<% end %>
+
+		<%= link_to('messages') do %>
+			<div class="message-button">
+				<h2>Academic</h2>
+				<%= image_tag('academic.png')%> 
+			</div>
+		<% end %>
+
+
+
 
 	<div id="twitter">
+		<h2>CMU Connect's Themed Chats</h2>
+		
 		<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 			<script>
 			new TWTR.Widget({
@@ -32,24 +63,5 @@
 			</script>
 		</div>
 
-	<%= link_to('messages') do %>
-		<div id="message-button">
-			<h2>Social</h2>
-			<%= image_tag('social.png')%> 
-		</div>
-	<% end %>
 	
-	<%= link_to('messages') do %>
-		<div id="message-button">
-			<h2>Professional</h2>
-			<%= image_tag('professional.png')%> 
-		</div>
-	<% end %>
-	
-	<%= link_to('messages') do %>
-		<div id="message-button">
-			<h2>Academic</h2>
-			<%= image_tag('academic.png')%> 
-		</div>
-	<% end %>
 

@@ -1,9 +1,26 @@
-<%= form_for @user do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label 'Andrew ID' %><br />
-    <%= f.text_field :andrew %>
+<p>
+    Andrew ID:<br />
+    <%= @user.andrew %>
   </p>
+  <p>
+    First Name:<br />
+    <%= @user.first_name %>
+  </p>
+ <p>
+    Last Name:<br />
+    <%= @user.last_name %>
+ </p> 
+  <p>
+    Department:<br />
+    <%= @user.major %>
+ </p>
+  <p> 
+    Grade:<br />
+    <%= @user.grade %>
+  </p>
+  <%= form_for @user do |f| %>
+  <%= f.error_messages %>
+ 
   <p>
     <%= f.label :username %><br />
     <%= f.text_field :username %>
