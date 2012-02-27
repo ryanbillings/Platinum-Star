@@ -17,6 +17,8 @@ CMUConnect::Application.routes.draw do
   
   match 'landing' => 'home#landing', :as => :landing
   
+  match 'professional' => 'messages#professional', :as => :professional
+  
   match 'privacy' => 'home#privacy', :as => :privacy
   
   match 'contact' => 'home#contact', :as => :contact
