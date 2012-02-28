@@ -134,11 +134,12 @@ p {
 
 
 #chat {
-	width: 400px;
+	width: 422px;
 	border-radius: 5px;
     height: 300px;
-        overflow-y: scroll;
+    overflow-y: scroll;
 	border: 1px #777 solid;
+	background-color: #fff;
 }
 
 #chat li {
@@ -147,6 +148,7 @@ p {
 	background-color: #F8F8F8;
 	padding: 5px;
 	margin: 5px 5px 5px 0px;
+	margin-left: -35px;
 }
 
 
