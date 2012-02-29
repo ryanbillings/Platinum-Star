@@ -46,7 +46,17 @@
   font-size: 16px;
   text-align: center;
 }
-
+#reportdiv {
+  width: 800px;
+  height: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #C8C8C8;
+  border: 1px solid #989898;
+  display: none;
+  font-size: 16px;
+  text-align: center;
+}
 .afterchat-button {
 	width: 205px;
 	height: 200px;

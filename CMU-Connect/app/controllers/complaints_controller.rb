@@ -19,8 +19,9 @@ load_and_authorize_resource
 
   def create
     @complaint = Complaint.new(params[:complaint])
+    @complaint.user_id = current_user.id
     if @complaint.save
-      redirect_to @complaint, :notice => "Successfully created complaint."
+      redirect_to :welcome, :notice => "Successfully reported user."
     else
       render :action => 'new'
     end

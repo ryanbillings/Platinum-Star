@@ -25,6 +25,7 @@ class RandoChatsController < ApplicationController
   
 
   def show
+    @complaint = Complaint.new
     @rando_chat = RandoChat.find(params[:id])
     config_opentok
     @tok_token = @opentok.generate_token :session_id => @rando_chat.sessionId
