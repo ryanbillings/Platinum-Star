@@ -22,6 +22,24 @@ body {
 	width: 90%;
 }
 
+#login-header input{
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	padding: 5px;
+	margin-right: 5px;
+	width: 110px;
+}
+
+#login-header [type=submit]{
+	padding: 4px;
+	width: 50p;
+}
+
+#login-header a{
+	font-size: 11px;
+	margin-left: 5px;	
+}
+
 #container img{
 	position:absolute; 
 	top:50%;
@@ -48,10 +66,12 @@ body {
 
 #footer {
 	font-size: 10px;
-
 	text-align: center;
 	padding: 20px 0px;
 	width: 50%;
 	margin: 0px auto;
+}
+
+.input-form {
 	
 }

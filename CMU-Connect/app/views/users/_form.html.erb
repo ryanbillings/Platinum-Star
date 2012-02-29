@@ -1,4 +1,6 @@
-<%= form_for @user do |f| %>
+<%= javascript_include_tag 'rails.validations' %>
+<%= javascript_include_tag 'rails.validations.custom' %>
+<%= form_for @user, :validate => true do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label 'Andrew ID' %><br />

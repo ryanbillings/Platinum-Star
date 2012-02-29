@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require rails.validations
+
 $(function() {
   var faye = new Faye.Client('http://localhost:9292/faye');
   faye.subscribe("/messages/new", function(data) {

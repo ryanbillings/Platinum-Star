@@ -56,44 +56,54 @@
 	
 <h1>Welcome to Random Social Chat!</h1>
 
-<div id="videobox">
-	<h2>You:</h2>
+		<div id="videobox">
+			<h2>You:</h2>
 
-</div>
-<script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
-<script type="text/javascript">
-        var apiKey = 11368202; 
-        var sessionId = "<%= @rando_chat.sessionId %>"; 
-        var token = "<%= @tok_token %>"; 
+	<script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
+	<script type="text/javascript">
+	        var apiKey = 11368202; 
+	        var sessionId = "<%= @rando_chat.sessionId %>"; 
+	        var token = "<%= @tok_token %>"; 
 
 
-        var session = TB.initSession(sessionId);
-        TB.addEventListener('exception', exceptionHandler);
+	        var session = TB.initSession(sessionId);
+	        TB.addEventListener('exception', exceptionHandler);
 
-        //Video chat event listeners
-        session.addEventListener('sessionConnected', sessionConnectedHandler);
-        session.addEventListener('streamCreated', streamCreatedHandler);
-        session.addEventListener('streamDestroyed', streamDestroyedHandler);
+	        //Video chat event listeners
+	        session.addEventListener('sessionConnected', sessionConnectedHandler);
+	        session.addEventListener('streamCreated', streamCreatedHandler);
+	        session.addEventListener('streamDestroyed', streamDestroyedHandler);
 
-        session.connect(apiKey,token);
+	        session.connect(apiKey,token);
 
-   	function disconnect() {
-	  session.disconnect();
-          session.cleanup();
-		document.getElementById('disconnectdiv').style.display = 'block';
-          document.getElementById('rando_content').style.display = 'none';
-	}
+	   	function disconnect() {
+		  session.disconnect();
+	          session.cleanup();
+			document.getElementById('disconnectdiv').style.display = 'block';
+	          document.getElementById('rando_content').style.display = 'none';
+		}
   
-        function next() {
-          session.disconnect();
-		  session.cleanup();
-          document.getElementById('nextdiv').style.display = 'block';
-          document.getElementById('rando_content').style.display = 'none';
-        }
-</script>
-  <div id="randochat-options">
-    <a href = "#" onclick="disconnect()">Disconnect</a>
-    <a href = "#" onclick="next()">Next</a>
-    <a href = "#">Report to Admin</a>
-  </div>
+	        function next() {
+	          session.disconnect();
+			  session.cleanup();
+	          document.getElementById('nextdiv').style.display = 'block';
+	          document.getElementById('rando_content').style.display = 'none';
+	        }
+	</script>
+	  
+</div>
+<div id="randochat-options">
+	<a href = "#" onclick="disconnect()">
+		<img src="/assets/icons/glyphicons_197_remove.png"/><br/>
+	     Disconnect
+	</a>
+
+	<a href = "#" onclick="next()">
+		<img src="/assets/icons/glyphicons_211_right_arrow.png"/><br/>
+	    Next
+	</a>
+	<a href = "#">
+		<img src="/assets/icons/glyphicons_199_ban.png"/> <br/>
+	    Report to Admin
+	</a>
 </div>
