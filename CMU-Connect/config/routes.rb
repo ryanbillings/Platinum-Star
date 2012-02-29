@@ -30,6 +30,8 @@ CMUConnect::Application.routes.draw do
   match 'roulette' => 'rando_chats#create', :as => :roulette
   
   match 'complaint' => 'complaints#index', :as => :complaint
+  
+  
   resources :messages
   resources :sessions
   resources :rando_chats

@@ -5,8 +5,9 @@ load_and_authorize_resource
 	
  def index
  
-    @complaints = Complaint.all
-  end
+    @complaint = Complaint.all
+ end
+ 
 
   def show
     @complaint = Complaint.find(params[:id])
