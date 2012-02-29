@@ -1,17 +1,20 @@
 <% title "Conferences" %>
 
 <table>
-  <tr>
+  <thead>
     <th>Date</th>
     <th>Public</th>
     <th>Sessionid</th>
     <th>Name</th>
     <th>Description</th>
     <th>Host</th>
-  </tr>
+	<th></th>
+	<th></th>
+	<th></th>
+  </thead>
   <% for conference in @conferences %>
     <tr>
-      <td><%= conference.date %></td>
+      <td><%= conference.date.strftime("%B %d, %Y") %></td>
       <td><%= conference.public %></td>
       <td><%= conference.sessionId %></td>
       <td><%= conference.name %></td>

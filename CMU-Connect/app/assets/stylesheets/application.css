@@ -107,25 +107,42 @@ p {
 
 #random_chat_links {
 	float:right;
-	border-radius: 5px;
+	border-radius: 6px;
 	background-color: #5BB75B;
 	background-image: -moz-linear-gradient(center top , #62C462, #51A351);
 	background-repeat: repeat-x;
 	border-color: rgba(0, 0, 0, 0.1);
 	padding: 15px 20px;
+	margin: 5px;
+	color: #FFF;
+	font-size: 15px;
+	position: relative;
+	vertical-align:middle;
 }
 
 #random_chat_links img{
 	vertical-align:middle;
+	padding-right: 10px;
 }
 
-#random_chat_links a{
+#create_conference_link {
+	float:right;
+	border-radius: 6px;
+	background-color: #5BB75B;
+	background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);	
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1);
+	padding: 15px 20px;
+	margin: 5px;
 	color: #FFF;
-	font-size: 18px;
+	font-size: 15px;
 	position: relative;
-	padding-left: 15px;
 	vertical-align:middle;
-	
+}
+
+#create_conference_link img{
+	vertical-align:middle;
+	padding-right: 10px;
 }
 
 #text_chat_area {
@@ -179,6 +196,41 @@ p {
 
 #flash_error, #flash_alert {
   background-color: #FCC;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+}
+
+td {
+	height:30px;
+	padding: 10px;
+	text-align: left;
+	vertical-align:middle;
+	border-bottom: 1px solid #eee;
+	font-size: 11px;
+}
+
+td a{
+	text-decoration: none;
+}
+
+th {
+	border-bottom: 2px solid #00AEEF;
+	padding: 10px;
+}
+
+tr{
+	text-align: left;
+}
+
+tr:hover {
+	background-color: #FBF8EF;
+}
+
+thead tr:hover{
+	background-color: transparent;
 }
 
 .fieldWithErrors {
