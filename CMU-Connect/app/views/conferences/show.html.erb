@@ -1,17 +1,18 @@
 <% title "Conference" %>
 
 <p>
-  <strong>Date:</strong>
-  <%= @conference.date %>
+  <strong>Start Time:</strong>
+  <%= @conference.start_time %>
+</p>
+<p>
+  <strong>End Time:</strong>
+  <%= @conference.end_time %>
 </p>
 <p>
   <strong>Public:</strong>
   <%= @conference.public %>
 </p>
-<p>
-  <strong>Sessionid:</strong>
-  <%= @conference.sessionId %>
-</p>
+
 <p>
   <strong>Name:</strong>
   <%= @conference.name %>
@@ -22,7 +23,7 @@
 </p>
 <p>
   <strong>Host:</strong>
-  <%= @conference.host_id %>
+  <%= User.find(@conference.host_id).first_name %>
 </p>
 
 <p>

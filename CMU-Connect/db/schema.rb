@@ -21,12 +21,14 @@ ActiveRecord::Schema.define(:version => 20120229174717) do
   end
 
   create_table "conferences", :force => true do |t|
-    t.datetime "date"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.boolean  "public"
     t.string   "sessionId"
     t.string   "name"
     t.text     "description"
     t.integer  "host_id"
+    t.string   "color"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

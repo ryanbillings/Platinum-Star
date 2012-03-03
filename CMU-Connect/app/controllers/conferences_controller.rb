@@ -13,6 +13,7 @@ class ConferencesController < ApplicationController
 
   def create
     @conference = Conference.new(params[:conference])
+    @conference.host_id = current_user.id
     if @conference.save
       redirect_to @conference, :notice => "Successfully created conference."
     else
