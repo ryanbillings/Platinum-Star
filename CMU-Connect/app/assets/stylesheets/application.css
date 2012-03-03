@@ -224,15 +224,15 @@ th {
 tr{
 	text-align: left;
 }
-
+/*
 tr:hover {
 	background-color: #FBF8EF;
 }
 
-thead tr:hover{
+thead tr : hover{
 	background-color: transparent;
 }
-
+*/
 .fieldWithErrors {
   display: inline;
 }

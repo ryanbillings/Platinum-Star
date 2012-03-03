@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :andrew
 
   has_many :complaints
-  
+  has_many :user_confs
+  has_many :conferences, :through => :user_confs 
   ROLES = %w[admin default banned]
   
   

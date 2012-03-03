@@ -9,6 +9,8 @@ CMUConnect::Application.routes.draw do
   resources :complaints
   resources :conferences
 
+ match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup
