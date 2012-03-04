@@ -11,11 +11,14 @@ body {
   margin: 0 auto;
   background-image: url('white-bg.gif');
   padding: 20px 40px;
-  margin-top: 20px 0px;
+  margin-top: 30px;
   margin-bottom: 20px;
-  border-radius: 8px;
-}
- 
+  border-radius: 6px;
+  border: 1px solid #999;
+  -moz-box-shadow:    1px 1px 15px #888;
+  -webkit-box-shadow: 1px 1px 15px #888;
+  box-shadow:         1px 1px 15px #888;
+} 
 
 a img {
   border: none;
@@ -23,6 +26,8 @@ a img {
 
 a {
   color: #0000FF;
+	text-decoration: none;
+
 }
 
 p {
@@ -38,7 +43,7 @@ p {
 #header {
   width: 800px;
   margin: 0 auto;
-  padding: 10px;
+  padding-top: 20px;
 }
 
 #navigation {
@@ -74,8 +79,6 @@ p {
 	color: #cfe2ee;
 	padding: 5px 10px;
 }
-
-
 
 .message-button {
 	width: 205px;

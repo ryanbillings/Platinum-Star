@@ -1,6 +1,7 @@
 <h1>Welcome, <%= current_user.first_name%>!</h1>
 <p>To begin chatting with other Tartans, select one of the links below:</p>
 
+	<div id="bigbuttons">
 		<%= link_to('messages') do %>
 			<div class="message-button">
 				<h2>Social</h2>
@@ -21,7 +22,7 @@
 				<%= image_tag('academic.png')%> 
 			</div>
 		<% end %>
-
+	</div>
 
 
 
