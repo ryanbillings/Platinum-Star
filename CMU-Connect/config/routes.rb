@@ -35,6 +35,7 @@ CMUConnect::Application.routes.draw do
   
   match 'complaint' => 'complaints#index', :as => :complaint
   
+  match 'faq' => 'home#faq', :as => :faq
   
   resources :messages
   resources :sessions
