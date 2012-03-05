@@ -3,7 +3,7 @@
 <%= form_for @user, :validate => true do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label 'Andrew ID' %><br />
+    <%= f.label :andrew, 'AndrewID' %><br />
     <%= f.text_field :andrew %>
   </p>
   <p>
@@ -11,7 +11,7 @@
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :password %><br />
+    <%= f.label :password, "Password (Do not use your AndrewID password)" %><br />
     <%= f.password_field :password %>
   </p>
   <p>
