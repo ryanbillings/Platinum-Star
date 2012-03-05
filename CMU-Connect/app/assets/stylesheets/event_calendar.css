@@ -14,10 +14,11 @@
 */
 
 /* Outer most container */
+@import url(http://fonts.googleapis.com/css?family=Voces);
 
 
 .ec-calendar {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: Voces, arial, helvetica, sans-serif;
   font-size: 11px;
   line-height: 14px;
   margin: 0;
