@@ -31,3 +31,11 @@
   <%= link_to "Destroy", @conference, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", conferences_path %>
 </p>
+
+<br />
+<p>
+<% if @conference.start_time <= Time.now and Time.now <= @conference.end_time %>
+ <%= link_to "JOIN CONFERENCE", :join_conference, :id => @conference.id %>
+<% end %>
+</p>
+</p>

@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag "tokbox_layout", :media => "all" %>
+<%= javascript_include_tag "tokbox_layout" %>
+
+
+<div id = "videobox">
+ <script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
+        <script type="text/javascript">
+                var apiKey = 11368202; 
+                var sessionId = "<%= @conference.sessionId %>"; 
+                var token = "<%= @tok_token %>"; 
+
+
+                var session = TB.initSession(sessionId);
+                TB.addEventListener('exception', exceptionHandler);
+
+                //Video chat event listeners
+                session.addEventListener('sessionConnected', sessionConnectedHandler);
+                session.addEventListener('streamCreated', streamCreatedHandler);
+                session.addEventListener('streamDestroyed', streamDestroyedHandler);
+
+                session.connect(apiKey,token);
+</script>
+
+</div>
+
+
