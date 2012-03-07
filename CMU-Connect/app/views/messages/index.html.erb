@@ -3,7 +3,11 @@
 
 	<p>Find out who's online in the IM Chatroom below, or select the button on the right to start video chatting with other Tartans!</p>
 
-
+	<div>
+	<% $logged_in_user.each do |i| %>
+	<%= User.find(i).first_name %>
+	<% end %>
+	</div>
 	<h2>IM Chatroom</h2>
 
 	<%= link_to (:roulette) do %>

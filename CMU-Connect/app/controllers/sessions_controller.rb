@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id
+      $logged_in_user.push(user.id)
       redirect_to_target_or_default :welcome, :notice => "Logged in successfully."
     else
       flash.now[:alert] = "Invalid login or password."
