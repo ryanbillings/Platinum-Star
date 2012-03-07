@@ -21,6 +21,9 @@
 	padding: 10px 0px;
 }
 
+#links {
+	height: 100px;
+}
 
 p {
 	font-size: 14px;
@@ -53,7 +56,7 @@ p {
 
 }
 
-.ec-month-nav ec-next-month {
+.ec-month-nav ec-next-month a{
 	text-align: right;
 }
 

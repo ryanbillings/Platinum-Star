@@ -8,18 +8,21 @@
 <p>Schedule a conference or start video chatting with other Tartans below.</p>
 <br />
 <br />
+	
+	<div id="links">
+		<%= link_to (:roulette) do %>
+			<div class="green_button">
+				<%= image_tag("random.png") %> Enter Random Chat!
+			</div>
+		<% end %>
+	
+		<%= link_to ("conferences/new") do %>
+			<div class="blue_button">
+				<%= image_tag("conference.png") %> Create a New Conference
+			</div>
+		<% end %>
+	</div>
+
 	<div id="calendar">
 		<%= raw(event_calendar) %>
 	</div>
-	<%= link_to (:roulette) do %>
-		<div class="green_button">
-			<%= image_tag("random.png") %> Enter Random Chat!
-		</div>
-	<% end %>
-	
-	<%= link_to ("conferences/new") do %>
-		<div class="blue_button">
-			<%= image_tag("conference.png") %> Create a New Conference
-		</div>
-	<% end %>
-
