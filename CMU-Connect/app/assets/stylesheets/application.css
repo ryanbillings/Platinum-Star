@@ -170,6 +170,12 @@ p {
 	padding-right: 10px;
 }
 
+#active_users {
+	float: right;
+	clear:right;
+	width: 300px;
+}
+
 #text_chat_area {
 	float:left;
 }
