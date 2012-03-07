@@ -37,6 +37,8 @@ CMUConnect::Application.routes.draw do
   
   match 'faq' => 'home#faq', :as => :faq
   
+  match 'calendar' => 'calendar#index', :as => :calendar
+  
   resources :messages
   resources :sessions
   resources :rando_chats
