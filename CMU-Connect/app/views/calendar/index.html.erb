@@ -3,12 +3,14 @@
 <%= stylesheet_link_tag "reset" %>
 <%= stylesheet_link_tag "event_calendar" %>
 <%= javascript_include_tag :event_calendar %>
+
 <h1>Professional Chat Lobby</h1>
 <p>Schedule a conference or start video chatting with other Tartans below.</p>
 <br />
 <br />
-<%= raw(event_calendar) %>
-
+	<div id="calendar">
+		<%= raw(event_calendar) %>
+	</div>
 	<%= link_to (:roulette) do %>
 		<div class="green_button">
 			<%= image_tag("random.png") %> Enter Random Chat!

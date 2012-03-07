@@ -17,6 +17,16 @@
 @import url(http://fonts.googleapis.com/css?family=Voces);
 
 
+#calendar{
+	padding: 10px 0px;
+}
+
+
+p {
+	font-size: 14px;
+}
+
+
 .ec-calendar {
   font-family: Voces, arial, helvetica, sans-serif;
   font-size: 11px;
@@ -36,10 +46,15 @@
 .ec-month-name {
   font-size: 16px;
   font-weight: bold;
+  text-align: center;
 }
 
 .ec-month-nav {
 
+}
+
+.ec-month-nav ec-next-month {
+	text-align: right;
 }
 
 /* Containers */
@@ -56,13 +71,15 @@
   left: 0;
   width: 100%;
   table-layout: fixed;
-  padding: 2px 0;
+  padding: 5px;
   background: #303030;
   color: white;
 }
 
 .ec-day-name {
   font-weight: normal;
+  text-align: center;
+  padding: 2px;
 }
 
 /* Rows container and Row */
@@ -148,6 +165,7 @@ a.ec-day-link {
   vertical-align: top;
   padding-right: 1px;
   padding-left: 2px;
+  height: 20px;
 }
 
 .ec-event-cell a {
