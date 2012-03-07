@@ -60,7 +60,7 @@ p {
 #navigation li
 {
     float: left;
-	margin:  10px;
+	margin:  8px;
 }
 
 #navigation li a
@@ -108,12 +108,23 @@ p {
 	width: 388px;
 }
 
-#random_chat_links {
+.green_button {
 	float:right;
 	border-radius: 6px;
 	background-color: #5BB75B;
-	background-image: -moz-linear-gradient(center top , #62C462, #51A351);
-	background-repeat: repeat-x;
+	background-image: linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+	background-image: -o-linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+	background-image: -moz-linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+	background-image: -webkit-linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+	background-image: -ms-linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.25, rgb(81,163,81)),
+		color-stop(0.75, rgb(98,196,98))
+	);
 	border-color: rgba(0, 0, 0, 0.1);
 	padding: 15px 20px;
 	margin: 5px;
@@ -123,17 +134,28 @@ p {
 	vertical-align:middle;
 }
 
-#random_chat_links img{
+.green_button img{
 	vertical-align:middle;
 	padding-right: 10px;
 }
 
-#create_conference_link {
+.blue_button {
 	float:right;
 	border-radius: 6px;
 	background-color: #5BB75B;
-	background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);	
-	background-repeat: repeat-x;
+	background-image: linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+	background-image: -o-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.25, rgb(0,68,204)),
+		color-stop(0.75, rgb(0,136,204))
+	);
 	border-color: rgba(0, 0, 0, 0.1);
 	padding: 15px 20px;
 	margin: 5px;
@@ -143,7 +165,7 @@ p {
 	vertical-align:middle;
 }
 
-#create_conference_link img{
+.blue_button img{
 	vertical-align:middle;
 	padding-right: 10px;
 }

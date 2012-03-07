@@ -5,9 +5,10 @@
 
 			<li><%= link_to 'Home', welcome_path %></li>
 			<li><%= link_to 'Social', messages_path %></li>
-			<li><%= link_to 'Professional', :professional %></li>
+			<li><%= link_to 'Professional', :calendar %></li>
 			<li><%= link_to 'Academic', messages_path %></li>
 			<li><%= link_to 'My Account', edit_user_path(current_user) %></li>	
+			<li><%= link_to 'FAQs', :faq %></li>
 			<li><%= link_to 'Logout', logout_path %></li>
 			<% if current_user.role == "admin"  %>
 			<li><%= link_to 'Admin', complaint_path %></li>

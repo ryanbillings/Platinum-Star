@@ -3,6 +3,26 @@
 <%= stylesheet_link_tag "reset" %>
 <%= stylesheet_link_tag "event_calendar" %>
 <%= javascript_include_tag :event_calendar %>
-<h1>Calendar</h1>
-
+<h1>Professional Chat Lobby</h1>
+<p>Schedule a conference or start video chatting with other Tartans below.</p>
+<br />
+<br />
 <%= raw(event_calendar) %>
+
+	<%= link_to (:roulette) do %>
+		<div class="green_button">
+			<%= image_tag("random.png") %> Enter Random Chat!
+		</div>
+	<% end %>
+	
+	<%= link_to ("conferences/new") do %>
+		<div class="blue_button">
+			<%= image_tag("conference.png") %> Create a New Conference
+		</div>
+	<% end %>
+	
+	<%= link_to ("conferences") do %>
+		<div class="blue_button">
+			<%= image_tag("list.png") %> View Public Conferences
+		</div>
+	<% end %>
