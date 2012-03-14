@@ -15,7 +15,7 @@ class Ability
     elsif user.role? == "default"
 	puts "default"
       can :manage, :all
-      cannot :create, Complaint
+      can :create, Complaint
     elsif user.role? == "banned"
 	  cannot :manage, :all
 	  can :show, :all

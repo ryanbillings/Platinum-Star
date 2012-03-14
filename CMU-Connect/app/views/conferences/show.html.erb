@@ -1,17 +1,19 @@
 <% title "Conference" %>
 
+raw(event_calendar)
 <p>
-  <strong>Date:</strong>
-  <%= @conference.date %>
+  <strong>Start Time:</strong>
+  <%= @conference.start_time %>
+</p>
+<p>
+  <strong>End Time:</strong>
+  <%= @conference.end_time %>
 </p>
 <p>
   <strong>Public:</strong>
   <%= @conference.public %>
 </p>
-<p>
-  <strong>Sessionid:</strong>
-  <%= @conference.sessionId %>
-</p>
+
 <p>
   <strong>Name:</strong>
   <%= @conference.name %>
@@ -22,11 +24,19 @@
 </p>
 <p>
   <strong>Host:</strong>
-  <%= @conference.host_id %>
+  <%= User.find(@conference.host_id).first_name %>
 </p>
 
 <p>
   <%= link_to "Edit", edit_conference_path(@conference) %> |
   <%= link_to "Destroy", @conference, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", conferences_path %>
+</p>
+
+<br />
+<p>
+<% if @conference.start_time <= Time.now and Time.now <= @conference.end_time %>
+ <%= link_to "JOIN CONFERENCE", :join_conference, :id => @conference.id %>
+<% end %>
+</p>
 </p>

@@ -11,11 +11,14 @@ body {
   margin: 0 auto;
   background-image: url('white-bg.gif');
   padding: 20px 40px;
-  margin-top: 20px 0px;
+  margin-top: 30px;
   margin-bottom: 20px;
-  border-radius: 8px;
-}
- 
+  border-radius: 6px;
+  border: 1px solid #999;
+  -moz-box-shadow:    1px 1px 15px #888;
+  -webkit-box-shadow: 1px 1px 15px #888;
+  box-shadow:         1px 1px 15px #888;
+} 
 
 a img {
   border: none;
@@ -23,6 +26,8 @@ a img {
 
 a {
   color: #0000FF;
+	text-decoration: none;
+
 }
 
 p {
@@ -38,7 +43,7 @@ p {
 #header {
   width: 800px;
   margin: 0 auto;
-  padding: 10px;
+  padding-top: 20px;
 }
 
 #navigation {
@@ -55,7 +60,7 @@ p {
 #navigation li
 {
     float: left;
-	margin:  10px;
+	margin:  8px;
 }
 
 #navigation li a
@@ -74,8 +79,6 @@ p {
 	color: #cfe2ee;
 	padding: 5px 10px;
 }
-
-
 
 .message-button {
 	width: 205px;
@@ -105,27 +108,72 @@ p {
 	width: 388px;
 }
 
-#random_chat_links {
+.green_button {
 	float:right;
-	border-radius: 5px;
+	border-radius: 6px;
 	background-color: #5BB75B;
-	background-image: -moz-linear-gradient(center top , #62C462, #51A351);
-	background-repeat: repeat-x;
+	background-image: linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+	background-image: -o-linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+	background-image: -moz-linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+	background-image: -webkit-linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+	background-image: -ms-linear-gradient(bottom, rgb(81,163,81) 25%, rgb(98,196,98) 75%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.25, rgb(81,163,81)),
+		color-stop(0.75, rgb(98,196,98))
+	);
 	border-color: rgba(0, 0, 0, 0.1);
 	padding: 15px 20px;
-}
-
-#random_chat_links img{
-	vertical-align:middle;
-}
-
-#random_chat_links a{
+	margin: 5px;
 	color: #FFF;
-	font-size: 18px;
+	font-size: 15px;
 	position: relative;
-	padding-left: 15px;
 	vertical-align:middle;
-	
+}
+
+.green_button img{
+	vertical-align:middle;
+	padding-right: 10px;
+}
+
+.blue_button {
+	float:right;
+	border-radius: 6px;
+	background-color: #5BB75B;
+	background-image: linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+	background-image: -o-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.25, rgb(0,68,204)),
+		color-stop(0.75, rgb(0,136,204))
+	);
+	border-color: rgba(0, 0, 0, 0.1);
+	padding: 15px 20px;
+	margin: 5px;
+	color: #FFF;
+	font-size: 15px;
+	position: relative;
+	vertical-align:middle;
+}
+
+.blue_button img{
+	vertical-align:middle;
+	padding-right: 10px;
+}
+
+#active_users {
+	float: right;
+	clear:right;
+	width: 300px;
 }
 
 #text_chat_area {
@@ -181,6 +229,41 @@ p {
   background-color: #FCC;
 }
 
+table {
+	width: 100%;
+	border-spacing: 0;
+}
+
+td {
+	height:30px;
+	padding: 10px;
+	text-align: left;
+	vertical-align:middle;
+	border-bottom: 1px solid #eee;
+	font-size: 11px;
+}
+
+td a{
+	text-decoration: none;
+}
+
+th {
+	border-bottom: 2px solid #00AEEF;
+	padding: 10px;
+}
+
+tr{
+	text-align: left;
+}
+/*
+tr:hover {
+	background-color: #FBF8EF;
+}
+
+thead tr : hover{
+	background-color: transparent;
+}
+*/
 .fieldWithErrors {
   display: inline;
 }

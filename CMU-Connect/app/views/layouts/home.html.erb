@@ -15,6 +15,11 @@
 	</script>
   </head>
   <body>
+	<% if current_user %>
+		<body onload = "window.location = '/welcome' ">
+	<% else %>
+		<body>
+	<% end %>
 	
 	<div id="header">
 		<div id="login-header">

@@ -3,11 +3,20 @@
 
 	<p>Find out who's online in the IM Chatroom below, or select the button on the right to start video chatting with other Tartans!</p>
 
-
+	
 	<h2>IM Chatroom</h2>
 
-	<div id="random_chat_links">
-		<%= image_tag("random.png") %> <%= link_to "Enter Random Chat!", :roulette %>
+	<%= link_to (:roulette) do %>
+		<div class="green_button">
+			<%= image_tag("random.png") %> Enter Random Chat!
+		</div>
+	<% end %>
+	
+	<div id="active_users">
+		<h3>Other users logged on:</h3>
+		<% $logged_in_user.each do |i| %>
+		<%= User.find(i).username %>
+		<% end %>
 	</div>
 
 	<div id="textbox">

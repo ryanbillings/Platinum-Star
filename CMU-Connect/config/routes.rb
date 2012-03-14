@@ -8,6 +8,8 @@ CMUConnect::Application.routes.draw do
   resources :surveys
   resources :complaints
   resources :conferences
+  match '/conference/video/:id' => 'conferences#video', :as => :join_conference
+ match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
@@ -33,6 +35,9 @@ CMUConnect::Application.routes.draw do
   
   match 'complaint' => 'complaints#index', :as => :complaint
   
+  match 'faq' => 'home#faq', :as => :faq
+  
+  match 'calendar' => 'calendar#index', :as => :calendar
   
   resources :messages
   resources :sessions

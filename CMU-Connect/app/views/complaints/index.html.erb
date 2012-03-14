@@ -3,13 +3,13 @@
 <table>
   <tr>
     <th>Username</th>
-	<th>Deacription</th>
+	<th>Description</th>
     
   </tr>
   <% for complaint in @complaints %>
     <tr>
-	  <td><%= complaint.user_id.username %></td>
-	  
+	  <td><%= complaint.user.first_name %></td>
+	  <td><%= complaint.description %></td> 
 	  <td><%= link_to "Show", complaint %></td>
       <td><%= link_to "Destroy", complaint, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

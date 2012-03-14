@@ -21,7 +21,7 @@
 			<div class="afterchat-button">
 				<h3>Report inappropriate behavior</h3>
 				<%= image_tag('report.png')%> 
-			</div>
+						</div>
 		<% end %>
   </p>
 </div>
@@ -43,13 +43,23 @@
 			</div>
 		<% end %>
 		
-		<%= link_to :messages do %>
+		<a href="#" onClick="report()">
 			<div class="afterchat-button">
 				<h3>Report inappropriate behavior</h3>
 				<%= image_tag('report.png')%> 
 			</div>
-		<% end %>
+		</a>
   </p>
+</div>
+
+<div id = "reportdiv">
+				  <h4>Please give a quick description of the inappropriate behavior</h4>
+				  <%= form_for @complaint, :controller => 'complaints', :action => 'create' do |f| %>
+				    <%= f.label :description %>
+				    <%= f.text_area :description %>
+				    <%= f.submit %>
+    				<% end %>
+
 </div>
 
 <div id = "rando_content">
@@ -58,7 +68,7 @@
 
 		<div id="videobox">
 			<h2>You:</h2>
-
+			<div id="them"><h2>Them:</h2></div>
 	<script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
 	<script type="text/javascript">
 	        var apiKey = 11368202; 
@@ -85,10 +95,19 @@
   
 	        function next() {
 	          session.disconnect();
-			  session.cleanup();
+		  session.cleanup();
 	          document.getElementById('nextdiv').style.display = 'block';
 	          document.getElementById('rando_content').style.display = 'none';
 	        }
+
+ 		function report() {
+		session.disconnect();
+		session.cleanup();
+		document.getElementById('rando_content').style.display = 'none';
+		document.getElementById('nextdiv').style.display = 'none';
+		document.getElementById('disconnectdiv').style.display = 'none';
+		document.getElementById('reportdiv').style.display = 'block';
+		}
 	</script>
 	  
 </div>
@@ -102,7 +121,7 @@
 		<img src="/assets/icons/glyphicons_211_right_arrow.png"/><br/>
 	    Next
 	</a>
-	<a href = "#">
+	<a href = "#" onclick="report()">
 		<img src="/assets/icons/glyphicons_199_ban.png"/> <br/>
 	    Report to Admin
 	</a>

@@ -1,16 +1,37 @@
+<style type = "text/css">
+/* css for timepicker */
+        .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+        .ui-timepicker-div dl { text-align: left; }
+        .ui-timepicker-div dl dt { height: 25px; }
+        .ui-timepicker-div dl dd { margin: -25px 10px 10px 65px; }
+        .ui-timepicker-div td { font-size: 90%; }
+        .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+</style>
+<%= stylesheet_link_tag 'jquery-ui-1.8.16.custom.css' %>
+<%= javascript_include_tag 'jquery-1.6.4.min' %>
+<%= javascript_include_tag 'jquery-ui-1.8.16.custom.min' %>
+<%= javascript_include_tag 'jquery-ui-timepicker-addon' %>
+<script type="text/javascript"> 
+        $(function(){                           
+                $('#conference_start_time').datetimepicker({dateFormat: 'yy-mm-dd ', timeFormat: 'hh:mm tt', ampm: true});
+                $('#conference_end_time').datetimepicker({dateFormat: 'yy-mm-dd ', timeFormat: 'hh:mm tt', ampm: true});
+                });                     
+</script>
+
+
 <%= form_for @conference do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </p>
+    <%= f.label :start_time %><br />
+  <input type = "text" name="conference[start_time]" id="conference_start_time" value = ""> 
+ </p>  
+  <p>
+    <%= f.label :end_time %><br />
+  <input type = "text" name="conference[end_time]" id="conference_end_time" value = ""> 
+ </p>
   <p>
     <%= f.label :public %><br />
     <%= f.check_box :public %>
-  </p>
-  <p>
-    <%= f.label :sessionId %><br />
-    <%= f.text_field :sessionId %>
   </p>
   <p>
     <%= f.label :name %><br />
@@ -19,10 +40,6 @@
   <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :host_id %><br />
-    <%= f.text_field :host_id %>
   </p>
   <p><%= f.submit %></p>
 <% end %>
