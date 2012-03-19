@@ -200,6 +200,35 @@ p {
 }
 
 
+#add_user{
+	width: 240px;
+	padding: 0 20px;
+	margin: 5px;
+	border-radius: 5px;
+  	border: 1px solid #999;
+	background-color: #F7F7F7;
+}
+
+#conference_description{
+	height: 100px;
+	width: 400px;
+}
+
+.remove_nested_fields{
+	font-size: 11px;
+	color: #D50202;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.add_nested_fields{
+	font-size: 13px;
+	padding-left: 15px;
+	color: #2F7D23;
+}
+
 #outer-footer{
 	width: 100%;
 	bottom: 0;

@@ -21,32 +21,34 @@
 
 <%= nested_form_for @conference do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :start_time %><br />
-  <input type = "text" name="conference[start_time]" id="conference_start_time" value = ""> 
- </p>  
-  <p>
-    <%= f.label :end_time %><br />
-  <input type = "text" name="conference[end_time]" id="conference_end_time" value = ""> 
- </p>
-  <p>
-    <%= f.label :public %><br />
-    <%= f.check_box :public %>
-  </p>
+
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
   <p>
+    <%= f.label "Conference Time:" %><br />
+  <input type = "text" name="conference[start_time]" id="conference_start_time" value = ""> to <input type = "text" name="conference[end_time]" id="conference_end_time" value = ""> 
+ </p>  
+
+  <p>
+    <%= f.label "Public?" %>
+    <%= f.check_box :public %>
+  </p>
+ 
+  <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
   <h3>Invite Guests</h3>
-  <p>
-     <%= f.fields_for :user_confs do |builder| %>
-        <%= render "user_conf_fields", :f => builder %>
-     <% end %>
-  </p>
-  <p><%= f.link_to_add "Add User", :user_confs %></p>
+		<p>
+	     <%= f.fields_for :user_confs do |builder| %>
+			<div id="add_user">
+	        	<%= render "user_conf_fields", :f => builder %>
+			</div>
+	     <% end %>
+	  </p>
+	
+  <p><%= f.link_to_add "+ Add User", :user_confs %></p>
   <p><%= f.submit %></p>
 <% end %>
