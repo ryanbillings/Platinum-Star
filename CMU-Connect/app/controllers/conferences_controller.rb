@@ -5,6 +5,20 @@ class ConferencesController < ApplicationController
 
   def show
     @conference = Conference.find(params[:id])
+    @host = User.find_by_id(@conference.host_id)
+    @user_confs = @conference.user_confs.all
+    @user_conf = UserConf.where(:user_id => current_user.id, :conference_id => @conference.id, :confirmed => false).first
+    @users = Array.new
+    @pending = Array.new
+
+    @user_confs.each do |uc|
+      user = User.find_by_id(uc.user_id)
+      if uc.confirmed
+        @users.push(user)
+      else
+        @pending.push(user)
+      end
+     end
   end
 
   def new
@@ -24,6 +38,7 @@ class ConferencesController < ApplicationController
         uc.destroy
       else
         uc.user_id = user.id
+	uc.confirmed = false
 	#We should add a mailer here..something like
 	#UserMailer.deliver(.....)
       end
@@ -32,7 +47,7 @@ class ConferencesController < ApplicationController
     host_user_conf = UserConf.new
     host_user_conf.user_id = current_user.id
     host_user_conf.andrew = current_user.andrew
-   
+    host_user_conf.confirmed = true
     config_opentok
     session = @opentok.create_session(request.remote_addr)
     @conference.sessionId = session.session_id

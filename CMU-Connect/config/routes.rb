@@ -11,6 +11,9 @@ CMUConnect::Application.routes.draw do
   match '/conference/video/:id' => 'conferences#video', :as => :join_conference
  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
+  match 'invitations/:id/invite' => 'invitations#invite'
+  match 'invitations/create' => 'invitations#create'
+
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup

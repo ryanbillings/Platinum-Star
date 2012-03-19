@@ -4,6 +4,7 @@ class CreateUserConfs < ActiveRecord::Migration
       t.integer :user_id
       t.integer :conference_id
       t.string :andrew
+      t.boolean :confirmed
       t.timestamps
     end
   end
