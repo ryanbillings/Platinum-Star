@@ -8,6 +8,6 @@ class Conference < ActiveRecord::Base
   validates_presence_of :start_time, :end_time, :name 
 
   accepts_nested_attributes_for :user_confs,
-  :reject_if => lambda { |a| User.find_by_id(a['user_id']) == nil }, :allow_destroy => true
+  :reject_if => lambda { |a| User.find_by_andrew(a['andrew']) == nil }, :allow_destroy => true
  
 end

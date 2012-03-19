@@ -17,17 +17,28 @@ class ConferencesController < ApplicationController
     @conference.host_id = current_user.id
 
     @conference.user_confs.each do |uc|
-      user = User.find_by_id(uc.user_id)
+      user = User.find_by_andrew(uc.andrew)
       if user == nil
         uc = nil
       elsif user.id == current_user.id
         uc.destroy
+      else
+        uc.user_id = user.id
+	#We should add a mailer here..something like
+	#UserMailer.deliver(.....)
       end
     end
+
+    host_user_conf = UserConf.new
+    host_user_conf.user_id = current_user.id
+    host_user_conf.andrew = current_user.andrew
+   
     config_opentok
     session = @opentok.create_session(request.remote_addr)
     @conference.sessionId = session.session_id
     if @conference.save
+      host_user_conf.conference_id = @conference.id
+      host_user_conf.save
       redirect_to @conference, :notice => "Successfully created conference."
     else
       render :action => 'new'

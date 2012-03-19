@@ -4,8 +4,8 @@ class CalendarController < ApplicationController
     @year = (params[:year] || (Time.zone || Time).now.year).to_i
 
     @shown_month = Date.civil(@year, @month)
-
-    @event_strips = current_user.conferences.event_strips_for_month(@shown_month)
+    conferences = Conference.where("public = ? OR id IN (SELECT conference_id FROM user_confs WHERE user_id = ?)",true,current_user.id)
+    @event_strips = conferences.event_strips_for_month(@shown_month)
     @conferences = current_user.conferences
   end
   

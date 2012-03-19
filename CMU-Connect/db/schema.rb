@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20120229174717) do
   create_table "user_confs", :force => true do |t|
     t.integer  "user_id"
     t.integer  "conference_id"
+    t.string   "andrew"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
