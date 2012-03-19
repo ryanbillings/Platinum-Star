@@ -7,6 +7,8 @@ class CalendarController < ApplicationController
     conferences = Conference.where("public = ? OR id IN (SELECT conference_id FROM user_confs WHERE user_id = ?)",true,current_user.id)
     @event_strips = conferences.event_strips_for_month(@shown_month)
     @conferences = current_user.conferences
+    @notifications = current_user.invitations
+
   end
   
 end

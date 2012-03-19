@@ -5,6 +5,18 @@
 <%= javascript_include_tag :event_calendar %>
 
 <h1>Professional Chat Lobby</h1>
+  <div id="notifications">
+    <h3>Notifications:</h3>
+    <!-- Show all pending invites -->
+    <% for notification in @notifications %>
+      <% conf = Conference.find_by_id(notification.conference_id) %>
+      <p><%= link_to "#{conf.name}", conf %></p>
+      <p><%= conf.start_time %></p>
+      <p>Hosted by <%= User.find(conf.host_id).first_name%> <%=User.find(conf.host_id).last_name %></p>
+      <p><%= link_to "Confirm Invite", "conferences/#{notification.id}/confirm", %></p>
+          <br />
+    <% end %>
+  </div><!-- end notifications -->
 <p>Schedule a conference or start video chatting with other Tartans below.</p>
 <br />
 <br />

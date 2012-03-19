@@ -85,6 +85,19 @@ class ConferencesController < ApplicationController
     @tok_token = @opentok.generate_token :session_id => @conference.sessionId
   end
 
+  # Confirm an invitation
+  def confirm
+    user_conf = UserConf.find_by_id(params[:id])
+    # If the user messes with the url, send them back
+    if user_conf.user_id != current_user.id
+      redirect_to conferences_url, :notice => "You do not have a pending invite to that conference"
+      return
+    end
+    # Otherwise confirm the meeting
+    user_conf.update_attribute(:confirmed, true)
+    redirect_to conferences_url, :notice => "Successfully Confirmed Invitation"
+  end
+
   private
   def config_opentok
     if @opentok.nil?
