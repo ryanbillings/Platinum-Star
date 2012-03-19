@@ -34,7 +34,7 @@ class InvitationsController < ApplicationController
     @user_conf.conference_id = conference.id
     @user_conf.andrew = user.andrew
     @user_conf.user_id = user.id
-
+    @user_conf.confirmed = false
     if @user_conf.save
       redirect_to conference, :notice => "Successfully sent Invitation"
     else

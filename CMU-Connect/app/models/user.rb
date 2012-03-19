@@ -9,9 +9,7 @@ class User < ActiveRecord::Base
   
   
   def role?
-  
-  return self.role 
-   
+    return self.role    
   end
   
   
@@ -28,6 +26,12 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_length_of :password, :minimum => 4, :allow_blank => true
   validates_andrew :andrew
+
+
+  def invitations
+    ucs = UserConf.where("user_id = ? AND confirmed = ?",self.id,false).all
+    return ucs
+  end
 
   # login can be either username or email address
   def self.authenticate(login, pass)

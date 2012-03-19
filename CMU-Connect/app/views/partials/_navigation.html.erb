@@ -5,7 +5,11 @@
 
 			<li><%= link_to 'Home', welcome_path %></li>
 			<li><%= link_to 'Social', messages_path %></li>
-			<li><%= link_to 'Professional', :calendar %></li>
+			<% if current_user.invitations.size > 0 %>
+			<li><%= link_to "Professional (#{current_user.invitations.size})", :calendar %></li>
+			<% else %>
+			<li><%= link_to "Professional", :calendar %></li>
+			<% end %>
 			<li><%= link_to 'Academic', messages_path %></li>
 			<li><%= link_to 'My Account', edit_user_path(current_user) %></li>	
 			<li><%= link_to 'FAQs', :faq %></li>
