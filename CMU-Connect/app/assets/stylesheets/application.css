@@ -242,7 +242,19 @@ a:hover{
 	margin: 0px auto;
 }
 
+#notifications{
+	padding: 8px;
+	margin: 20px 4px;	
+	width: 250px;
+	float: left;
+	border-radius: 5px;
+  	border: 1px solid #999;
+	background-color: #F7F7F7;
+}
 
+#notifications p{
+	font-size: 11px;
+}
 
 #flash_notice, #flash_error, #flash_alert {
   padding: 8px 12px;
@@ -329,7 +341,13 @@ thead tr : hover{
 	font-weight:bold;
 }
 
+.block {
+	display:block;
+}
 
+#links {
+	padding: 20px 0px;
+}
 
 .delete-button a{
 	font-size: 12px;

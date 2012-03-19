@@ -1,12 +1,13 @@
 <% title "Conference" %>
 
 <p>
-  <strong>Start Time:</strong>
-  <%= @conference.start_time %>
+  <strong>Date:</strong>
+  <%= @conference.start_time.strftime("%B %d, %Y") %>
 </p>
 <p>
-  <strong>End Time:</strong>
-  <%= @conference.end_time %>
+  <strong>Time:</strong>
+  <%= @conference.start_time.strftime("%l:%M%P") %> -
+  <%= @conference.end_time.strftime("%l:%M%P") %>
 </p>
 <p>
   <strong>Public:</strong>
@@ -25,14 +26,7 @@
   <strong>Host:</strong>
   <%= User.find(@conference.host_id).first_name %>
 </p>
-<p>
-  <h3>Invited Users:</h3>
-  <ul>
-  <% @conference.users.each do |u| %>
-    <li><%= u.first_name %></li>
-  <% end %>
-  </ul>
-</p>
+
 <p>
   <%= link_to "Edit", edit_conference_path(@conference) %> |
   <%= link_to "Destroy", @conference, :confirm => 'Are you sure?', :method => :delete %> |
