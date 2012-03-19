@@ -97,6 +97,7 @@ GEM
     mocha (0.10.4)
       metaclass (~> 0.0.1)
     multi_json (1.1.0)
+    nested_form (0.2.0)
     net-ldap (0.3.1)
     nifty-generators (0.4.6)
     opentok (0.0.5)
@@ -168,6 +169,7 @@ DEPENDENCIES
   event-calendar
   jquery-rails
   mocha
+  nested_form
   nifty-generators
   opentok
   rails (= 3.2.1)

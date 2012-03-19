@@ -9,11 +9,21 @@ class ConferencesController < ApplicationController
 
   def new
     @conference = Conference.new
+    user_conf = @conference.user_confs.build
   end
 
   def create
     @conference = Conference.new(params[:conference])
     @conference.host_id = current_user.id
+
+    @conference.user_confs.each do |uc|
+      user = User.find_by_id(uc.user_id)
+      if user == nil
+        uc = nil
+      elsif user.id == current_user.id
+        uc.destroy
+      end
+    end
     config_opentok
     session = @opentok.create_session(request.remote_addr)
     @conference.sessionId = session.session_id

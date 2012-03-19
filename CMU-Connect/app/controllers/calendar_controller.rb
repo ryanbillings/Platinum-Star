@@ -5,7 +5,7 @@ class CalendarController < ApplicationController
 
     @shown_month = Date.civil(@year, @month)
 
-    @event_strips = Conference.event_strips_for_month(@shown_month)
+    @event_strips = current_user.conferences.event_strips_for_month(@shown_month)
     @conferences = current_user.conferences
   end
   

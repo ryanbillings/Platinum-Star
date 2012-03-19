@@ -1,6 +1,5 @@
 <% title "Conference" %>
 
-raw(event_calendar)
 <p>
   <strong>Start Time:</strong>
   <%= @conference.start_time %>
@@ -26,7 +25,14 @@ raw(event_calendar)
   <strong>Host:</strong>
   <%= User.find(@conference.host_id).first_name %>
 </p>
-
+<p>
+  <h3>Invited Users:</h3>
+  <ul>
+  <% @conference.users.each do |u| %>
+    <li><%= u.first_name %></li>
+  <% end %>
+  </ul>
+</p>
 <p>
   <%= link_to "Edit", edit_conference_path(@conference) %> |
   <%= link_to "Destroy", @conference, :confirm => 'Are you sure?', :method => :delete %> |
