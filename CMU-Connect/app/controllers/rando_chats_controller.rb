@@ -46,8 +46,10 @@ class RandoChatsController < ApplicationController
      else
        @exchange = @rando_chat.exchange
        if @exchange.match == true and params[:match] == "true"
-       #MAILER
-       
+         user1 = User.find_by_id(@rando_chat.u1_id)
+         user2 = User.find_by_id(@rando_chat.u2_id)
+	 UserMailer.exchange(user1,user2).deliver
+         UserMailer.exchange(user2,user1).deliver
        end
      end
     if params[:next] == "true"
