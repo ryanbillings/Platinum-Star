@@ -1,0 +1,17 @@
+<% title "Complaint" %>
+
+<p>
+  <strong>Username:</strong>
+  <%= @complaint.user_id.username %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @complaint.description %>
+</p>
+
+<p>
+  
+  <%= link_to "Edit", edit_complaint_path(@complaint) %> |
+  <%= link_to "Destroy", @complaint, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", complaints_path %>
+</p>

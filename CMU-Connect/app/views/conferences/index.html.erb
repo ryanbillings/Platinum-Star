@@ -1,0 +1,30 @@
+<% title "Conferences" %>
+
+<table>
+  <thead>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Public</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Host</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </thead>
+  <% for conference in @conferences %>
+    <tr>
+      <td><%= conference.start_time.strftime("%B %d, %Y") %></td>
+      <td><%= conference.end_time.strftime("%B %d, %Y") %></td>
+      <td><%= conference.public %></td>
+      <td><%= conference.name %></td>
+      <td><%= conference.description %></td>
+      <td><%= User.find(conference.host_id).first_name %></td>
+      <td><%= link_to "Show", conference %></td>
+      <td><%= link_to "Edit", edit_conference_path(conference) %></td>
+      <td><%= link_to "Destroy", conference, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Conference", new_conference_path %></p>

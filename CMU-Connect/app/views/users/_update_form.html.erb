@@ -1,0 +1,40 @@
+<p>
+    <div class="bold">Andrew ID:</div>
+    <%= @user.andrew %>
+  </p>
+  <p>
+    <div class="bold">First Name:</div>
+    <%= @user.first_name %>
+  </p>
+ <p>
+    <div class="bold">Last Name:</div>
+    <%= @user.last_name %>
+ </p> 
+  <p>
+    <div class="bold">Department:</div>
+    <%= @user.major %>
+ </p>
+  <p> 
+    <div class="bold">Grade:</div>
+    <%= @user.grade %>
+  </p>
+
+  <%= form_for @user do |f| %>
+  <%= f.error_messages %>
+ 
+  <p>
+    <div class="bold"><%= f.label :username %></div>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <div class="bold"><%= f.label :password %></div>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <div class="bold"><%= f.label :password_confirmation, "Confirm Password" %></div>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>	
+<% end %>
+
+

@@ -1,0 +1,25 @@
+<% title "Theme Chats" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Sessionid</th>
+  </tr>
+  <% for theme_chat in @theme_chats %>
+    <tr>
+      <td><%= theme_chat.name %></td>
+      <td><%= theme_chat.description %></td>
+      <td><%= theme_chat.start_date %></td>
+      <td><%= theme_chat.end_date %></td>
+      <td><%= theme_chat.sessionId %></td>
+      <td><%= link_to "Show", theme_chat %></td>
+      <td><%= link_to "Edit", edit_theme_chat_path(theme_chat) %></td>
+      <td><%= link_to "Destroy", theme_chat, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Theme Chat", new_theme_chat_path %></p>
