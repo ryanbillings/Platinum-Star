@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  rando_chat_id: 1
-  match: false
-
-two:
-  rando_chat_id: 1
-  match: false
