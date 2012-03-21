@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229174717) do
+ActiveRecord::Schema.define(:version => 20120320225626) do
 
   create_table "complaints", :force => true do |t|
     t.text     "description"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(:version => 20120229174717) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "exchanges", :force => true do |t|
+    t.integer  "rando_chat_id"
+    t.boolean  "match"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "messages", :force => true do |t|
     t.text     "content"
     t.integer  "user_id"
@@ -42,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20120229174717) do
 
   create_table "rando_chats", :force => true do |t|
     t.string   "sessionId"
+    t.integer  "u1_id"
+    t.integer  "u2_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

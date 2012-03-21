@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :password, :password_confirmation, :andrew
+  attr_accessible :username, :email, :password, :password_confirmation, :andrew, :first_name, :last_name
 
   has_many :complaints
   has_many :user_confs
@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
     return self.role    
   end
   
-  
+  def name
+    return "#{self.first_name} #{self.last_name}"
+  end  
   
   
   attr_accessor :password
