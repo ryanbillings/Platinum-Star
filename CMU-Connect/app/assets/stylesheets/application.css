@@ -184,8 +184,8 @@ p {
 #chat {
 	width: 422px;
 	border-radius: 5px;
-    height: 300px;
-    overflow-y: scroll;
+        height: 300px;
+        overflow-y: scroll;
 	border: 1px #777 solid;
 	background-color: #fff;
 }

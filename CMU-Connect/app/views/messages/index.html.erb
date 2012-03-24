@@ -17,7 +17,7 @@
 	<div id="active_users">
 		<h3>Other users logged on:</h3>
 		<% $logged_in_user.each do |i| %>
-		<%= User.find(i).username %>
+		<%= User.find(i).username %><br />
 		<% end %>
 	</div>
 
