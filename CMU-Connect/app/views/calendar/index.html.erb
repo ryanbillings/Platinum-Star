@@ -8,18 +8,22 @@
   
 
 <div class="block">
-	<div id="notifications">
-	    <h3>Notifications:</h3> <br/>
-	    <!-- Show all pending invites -->
-	    <% for notification in @notifications %>
-	      <% conf = Conference.find_by_id(notification.conference_id) %>
-	      <p><%= link_to "#{conf.name}", conf %></p>
-	      <p><%= conf.start_time.strftime("%B %d, %Y at %l:%M%P") %>-<%= conf.start_time.strftime("%l:%M%P") %></p>
-	      <p>Hosted by <%= User.find(conf.host_id).first_name%> <%=User.find(conf.host_id).last_name %></p>
-	      <p><%= link_to "Confirm Invite", "conferences/#{notification.id}/confirm" %></p>
-	          <br />
-	    <% end %>
-	</div><!-- end notifications -->
+	
+	<% if @notifications.nil? %>
+		<div id="notifications">
+		    <h3>Notifications:</h3> <br/>
+		    <!-- Show all pending invites -->
+		    <% for notification in @notifications %>
+		      <% conf = Conference.find_by_id(notification.conference_id) %>
+		      <p><%= link_to "#{conf.name}", conf %></p>
+		      <p><%= conf.start_time.strftime("%B %d, %Y at %l:%M%P") %>-<%= conf.start_time.strftime("%l:%M%P") %></p>
+		      <p>Hosted by <%= User.find(conf.host_id).first_name%> <%=User.find(conf.host_id).last_name %></p>
+		      <p><%= link_to "Confirm Invite", "conferences/#{notification.id}/confirm" %></p>
+		          <br />
+		    <% end %>
+		</div>
+	<% else %>
+	<% end %>	
 	
 	<div id="links">
 		<%= link_to (:roulette) do %>
