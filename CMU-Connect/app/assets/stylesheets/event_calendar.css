@@ -30,6 +30,10 @@ p {
 	font-size: 14px;
 }
 
+h2 {
+	font-weight: bold;
+	font-size: 16pt;
+}
 
 .ec-calendar {
   font-family: Voces, arial, helvetica, sans-serif;
@@ -57,9 +61,6 @@ p {
 
 }
 
-.ec-month-nav ec-next-month a{
-	text-align: right;
-}
 
 /* Containers */
 .ec-body {
