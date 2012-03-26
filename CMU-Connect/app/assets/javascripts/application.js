@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.qtip
 
 $(function() {
   var faye = new Faye.Client('http://localhost:9292/faye');
@@ -30,6 +31,3 @@ function add_fields(link, association, content) {
   var regexp = new RegExp("new_" + association, "g")
   $(link).parent().before(content.replace(regexp, new_id));
 }
-
-
-
