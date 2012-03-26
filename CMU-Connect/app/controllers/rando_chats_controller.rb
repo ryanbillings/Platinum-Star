@@ -4,6 +4,7 @@ class RandoChatsController < ApplicationController
     if $rando_queue == 1
       $rando_queue = 0
       @rando_chat = RandoChat.find(:all, :order => "created_at DESC").first
+      @rando_chat.update_attribute(:u2_id,current_user.id)
         respond_to do |format|
           format.html { redirect_to @rando_chat, notice: 'Please wait for other chatter' }
         end
@@ -11,6 +12,7 @@ class RandoChatsController < ApplicationController
     config_opentok
     session = @opentok.create_session(request.remote_addr,Hash.new("p2p.preferences"=>"enabled"))
     @rando_chat = RandoChat.new(:sessionId => session.session_id)
+    @rando_chat.u1_id = current_user.id
     $rando_queue = 1
     respond_to do |format|
       if @rando_chat.save
@@ -33,6 +35,30 @@ class RandoChatsController < ApplicationController
       format.html 
     end
    end
+
+   def exchange
+     # If there is no exchange row yet, create it
+     @rando_chat = RandoChat.find(params[:id])
+     if @rando_chat.exchange.nil?
+       @exchange = Exchange.new(:rando_chat_id => @rando_chat.id)
+       @exchange.match = params[:match]
+       @exchange.save
+     else
+       @exchange = @rando_chat.exchange
+       if @exchange.match == true and params[:match] == "true"
+         user1 = User.find_by_id(@rando_chat.u1_id)
+         user2 = User.find_by_id(@rando_chat.u2_id)
+	 UserMailer.exchange(user1,user2).deliver
+         UserMailer.exchange(user2,user1).deliver
+       end
+     end
+    if params[:next] == "true"
+      redirect_to :action => "create"
+    else
+      redirect_to "/messages/"
+    end
+   end
+     
 
   private
   def config_opentok

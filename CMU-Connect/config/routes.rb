@@ -9,8 +9,11 @@ CMUConnect::Application.routes.draw do
   resources :complaints
   resources :conferences
   match '/conference/video/:id' => 'conferences#video', :as => :join_conference
- match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
-
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  match 'conferences/:id/confirm' => 'conferences#confirm', :as => :confirm
+  match 'invitations/:id/invite' => 'invitations#invite'
+  match 'invitations/create' => 'invitations#create'
+  
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup
@@ -32,16 +35,16 @@ CMUConnect::Application.routes.draw do
   match 'destroy' => 'users#destroy', :as => :delete_account
 
   match 'roulette' => 'rando_chats#create', :as => :roulette
-  
+  match 'rando_chats/:id' => 'rando_chats#show' 
+  match 'rando_chats/exchange/:id/:match/:next' => 'rando_chats#exchange', :as => :exchange
   match 'complaint' => 'complaints#index', :as => :complaint
   
   match 'faq' => 'home#faq', :as => :faq
   
   match 'calendar' => 'calendar#index', :as => :calendar
-  
+  resources :rando_chats  
   resources :messages
   resources :sessions
-  resources :rando_chats
   resources :users
  
   root :to => 'home#landing'

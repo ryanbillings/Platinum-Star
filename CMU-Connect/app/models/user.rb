@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :password, :password_confirmation, :andrew
+  attr_accessible :username, :email, :password, :password_confirmation, :andrew, :first_name, :last_name
 
   has_many :complaints
   has_many :user_confs
@@ -9,12 +9,12 @@ class User < ActiveRecord::Base
   
   
   def role?
-  
-  return self.role 
-   
+    return self.role    
   end
   
-  
+  def name
+    return "#{self.first_name} #{self.last_name}"
+  end  
   
   
   attr_accessor :password
@@ -28,6 +28,12 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_length_of :password, :minimum => 4, :allow_blank => true
   validates_andrew :andrew
+
+
+  def invitations
+    ucs = UserConf.where("user_id = ? AND confirmed = ?",self.id,false).all
+    return ucs
+  end
 
   # login can be either username or email address
   def self.authenticate(login, pass)

@@ -184,8 +184,8 @@ p {
 #chat {
 	width: 422px;
 	border-radius: 5px;
-    height: 300px;
-    overflow-y: scroll;
+        height: 300px;
+        overflow-y: scroll;
 	border: 1px #777 solid;
 	background-color: #fff;
 }
@@ -200,6 +200,32 @@ p {
 }
 
 
+#add_user{
+	width: 240px;
+	padding: 0 20px;
+	margin: 5px;
+	border-radius: 5px;
+  	border: 1px solid #999;
+	background-color: #F7F7F7;
+}
+
+#conference_description{
+	height: 100px;
+	width: 400px;
+}
+
+.remove_nested_fields{
+	font-size: 11px;
+	color: #D50202;
+}
+
+
+.add_nested_fields{
+	font-size: 13px;
+	padding-left: 15px;
+	color: #2F7D23;
+}
+
 #outer-footer{
 	width: 100%;
 	bottom: 0;
@@ -213,7 +239,19 @@ p {
 	margin: 0px auto;
 }
 
+#notifications{
+	padding: 8px;
+	margin: 20px 4px;	
+	width: 250px;
+	float: left;
+	border-radius: 5px;
+  	border: 1px solid #999;
+	background-color: #F7F7F7;
+}
 
+#notifications p{
+	font-size: 11px;
+}
 
 #flash_notice, #flash_error, #flash_alert {
   padding: 8px 12px;
@@ -300,7 +338,13 @@ thead tr : hover{
 	font-weight:bold;
 }
 
+.block {
+	display:block;
+}
 
+#links {
+	padding: 20px 0px;
+}
 
 .delete-button a{
 	font-size: 12px;

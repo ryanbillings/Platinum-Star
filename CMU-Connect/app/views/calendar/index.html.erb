@@ -5,9 +5,25 @@
 <%= javascript_include_tag :event_calendar %>
 
 <h1>Professional Chat Lobby</h1>
-<p>Schedule a conference or start video chatting with other Tartans below.</p>
-<br />
-<br />
+  
+
+<div class="block">
+	
+	<% if @notifications.nil? %>
+		<div id="notifications">
+		    <h3>Notifications:</h3> <br/>
+		    <!-- Show all pending invites -->
+		    <% for notification in @notifications %>
+		      <% conf = Conference.find_by_id(notification.conference_id) %>
+		      <p><%= link_to "#{conf.name}", conf %></p>
+		      <p><%= conf.start_time.strftime("%B %d, %Y at %l:%M%P") %>-<%= conf.start_time.strftime("%l:%M%P") %></p>
+		      <p>Hosted by <%= User.find(conf.host_id).first_name%> <%=User.find(conf.host_id).last_name %></p>
+		      <p><%= link_to "Confirm Invite", "conferences/#{notification.id}/confirm" %></p>
+		          <br />
+		    <% end %>
+		</div>
+	<% else %>
+	<% end %>	
 	
 	<div id="links">
 		<%= link_to (:roulette) do %>
@@ -22,7 +38,10 @@
 			</div>
 		<% end %>
 	</div>
-
+</div>
+		
+	<br/>
 	<div id="calendar">
+		<p>Below you can view all the conferences you are invited to and any public conference available for you to join!</p><br/><br/>
 		<%= raw(event_calendar) %>
 	</div>

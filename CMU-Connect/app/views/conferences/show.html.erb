@@ -1,13 +1,13 @@
 <% title "Conference" %>
 
-raw(event_calendar)
 <p>
-  <strong>Start Time:</strong>
-  <%= @conference.start_time %>
+  <strong>Date:</strong>
+  <%= @conference.start_time.strftime("%B %d, %Y") %>
 </p>
 <p>
-  <strong>End Time:</strong>
-  <%= @conference.end_time %>
+  <strong>Time:</strong>
+  <%= @conference.start_time.strftime("%l:%M%P") %> -
+  <%= @conference.end_time.strftime("%l:%M%P") %>
 </p>
 <p>
   <strong>Public:</strong>
@@ -32,6 +32,32 @@ raw(event_calendar)
   <%= link_to "Destroy", @conference, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", conferences_path %>
 </p>
+
+    <h3>Attending Users</h3>
+        <div>
+          <% @users.each do |user| %>
+                <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
+                <br />
+          <% end %>
+        </div>
+        <br />
+        <h3>Pending Invitation</h3>
+        <div>
+          <% @pending.each do |user| %>
+                <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
+          <br />
+          <% end %>
+        </div>
+        <p>
+          <% if @user_conference != nil %>
+                <%= link_to "Confirm Invitation",:confirm %>
+          <% end %>
+        </p>
+        <p>
+          <% if current_user.id == @host.id %>
+                <%= link_to "Invite Users", :controller => "invitations", :action => "invite", :id => @conference.id %>
+          <% end%>
+        </p>
 
 <br />
 <p>
