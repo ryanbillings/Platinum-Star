@@ -1,4 +1,5 @@
 class ThemeChatsController < ApplicationController
+  before_filter :login_required
   def index
     @theme_chats = ThemeChat.all
   end

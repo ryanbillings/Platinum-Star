@@ -1,4 +1,5 @@
 class ConferencesController < ApplicationController
+ before_filter :login_required
   def index
     @conferences = Conference.all
   end

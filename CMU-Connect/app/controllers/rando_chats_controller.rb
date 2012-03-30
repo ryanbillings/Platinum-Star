@@ -1,5 +1,5 @@
 class RandoChatsController < ApplicationController
-
+before_filter :login_required
   def create
     if $rando_queue == 1
       $rando_queue = 0
