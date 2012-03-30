@@ -54,7 +54,7 @@ $(document).ready(function()
 		}
 	});
 	
-	<% if current_user.invitations.size > 0 %>
+	<% if current_user and current_user.invitations.size > 0 %>
 	$('#professional2').qtip({
 		content: 'You have '<%= current_user.invitations.size %>' notifications!',
 		position: {
