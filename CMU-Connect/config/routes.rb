@@ -13,7 +13,7 @@ CMUConnect::Application.routes.draw do
   match 'conferences/:id/confirm' => 'conferences#confirm', :as => :confirm
   match 'invitations/:id/invite' => 'invitations#invite'
   match 'invitations/create' => 'invitations#create'
-  
+  match 'invitations/autocomplete' => 'invitations#autocomplete'  
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup
@@ -34,9 +34,9 @@ CMUConnect::Application.routes.draw do
   
   match 'destroy' => 'users#destroy', :as => :delete_account
 
-  match 'roulette' => 'rando_chats#create', :as => :roulette
+  match 'roulette/:type' => 'rando_chats#create'
   match 'rando_chats/:id' => 'rando_chats#show' 
-  match 'rando_chats/exchange/:id/:match/:next' => 'rando_chats#exchange', :as => :exchange
+  match 'rando_chats/exchange/:id/:match/:next/:type' => 'rando_chats#exchange', :as => :exchange
   match 'complaint' => 'complaints#index', :as => :complaint
   
   match 'faq' => 'home#faq', :as => :faq

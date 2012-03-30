@@ -1,3 +1,17 @@
+<%= javascript_include_tag "jquery-ui" %>
+<%= stylesheet_link_tag "jquery-ui-1.8.16.custom" %>
+<script type = "text/javascript" >
+  $(function() {
+  $('#andrew').autocomplete({
+    minLength: 2,
+    source: '/invitations/autocomplete.json',    
+    focus: function(event, ui) {
+                $('#andrew').val(ui.item);
+                return false;
+            }
+ })
+});
+</script>
 <%= form_tag :action => "create" do  %>
   Andrew ID: <%= text_field_tag :andrew, params[:andrew]  %><br />
   <input id="id" name="id" type="hidden" value="<%=params[:id]%>"/>

@@ -3,16 +3,30 @@ class RandoChatsController < ApplicationController
   def create
     if $rando_queue == 1
       $rando_queue = 0
-      @rando_chat = RandoChat.find(:all, :order => "created_at DESC").first
+      if params[:type] == "social"
+        type = true
+        session[:type] = "social"
+      else
+        type = false
+        session[:type] = "professional"
+      end
+      @rando_chat = RandoChat.where("social = ?",type).order("created_at desc").first
       @rando_chat.update_attribute(:u2_id,current_user.id)
         respond_to do |format|
           format.html { redirect_to @rando_chat, notice: 'Please wait for other chatter' }
         end
     else
     config_opentok
-    session = @opentok.create_session(request.remote_addr,Hash.new("p2p.preferences"=>"enabled"))
-    @rando_chat = RandoChat.new(:sessionId => session.session_id)
+    osession = @opentok.create_session(request.remote_addr,Hash.new("p2p.preferences"=>"enabled"))
+    @rando_chat = RandoChat.new(:sessionId => osession.session_id)
     @rando_chat.u1_id = current_user.id
+    if params[:type] == "social"
+      @rando_chat.social = true
+      session[:type] = "social"
+    else
+      @rando_chat.social = false
+      session[:type] = "professional"
+    end
     $rando_queue = 1
     respond_to do |format|
       if @rando_chat.save
@@ -29,6 +43,8 @@ class RandoChatsController < ApplicationController
   def show
     @complaint = Complaint.new
     @rando_chat = RandoChat.find(params[:id])
+    @type = session[:type]
+    puts "========================\n#{@type}\n==============="
     config_opentok
     @tok_token = @opentok.generate_token :session_id => @rando_chat.sessionId
     respond_to do |format|

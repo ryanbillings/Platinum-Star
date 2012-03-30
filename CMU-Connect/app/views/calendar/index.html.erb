@@ -26,7 +26,7 @@
 	<% end %>	
 	
 	<div id="links">
-		<%= link_to (:roulette) do %>
+		<%= link_to 'roulette/professional' do %>
 			<div class="green_button">
 				<%= image_tag("random.png") %> Enter Random Chat!
 			</div>
@@ -42,6 +42,35 @@
 		
 	<br/>
 	<div id="calendar">
-		<p>Below you can view all the conferences you are invited to and any public conference available for you to join!</p><br/><br/>
+		<h2>Calendar of Conferences</h2>
 		<%= raw(event_calendar) %>
 	</div>
+
+	<script type="text/javascript" class="example">
+	$(document).ready(function()
+	{
+		$('.green_button').qtip({
+			content: 'To start a chatting professionally with a random Tartan click here!',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			}
+		});
+
+		$('.blue_button').qtip({
+			content: 'To create a private professional conference click here!  You can set the date/time of the conference, add a title/description, and invite other users to attend.',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			}
+		});
+		$('#calendar a').qtip({
+			content: 'Click here to view event details and join the conference!',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			}
+		});
+
+	});
+	</script>

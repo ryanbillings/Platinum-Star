@@ -4,15 +4,15 @@
 			<ul>
 
 			<li><%= link_to 'Home', welcome_path %></li>
-			<li><%= link_to 'Social', messages_path %></li>
+			<li id="social"><%= link_to 'Social', messages_path %></li>
 			<% if current_user.invitations.size > 0 %>
-			<li><%= link_to "Professional (#{current_user.invitations.size})", :calendar %></li>
+			<li id="professional2"><%= link_to "Professional (#{current_user.invitations.size})", :calendar %></li>
 			<% else %>
-			<li><%= link_to "Professional", :calendar %></li>
+			<li id="professional"><%= link_to "Professional", :calendar %></li>
 			<% end %>
-			<li><%= link_to 'Academic', messages_path %></li>
-			<li><%= link_to 'My Account', edit_user_path(current_user) %></li>	
-			<li><%= link_to 'FAQs', :faq %></li>
+			<li id="academic"><%= link_to 'Academic', messages_path %></li>
+			<li id="account"><%= link_to 'My Account', edit_user_path(current_user) %></li>	
+			<li id="faq"><%= link_to 'FAQs', :faq %></li>
 			<li><%= link_to 'Logout', logout_path %></li>
 			<% if current_user.role == "admin"  %>
 			<li><%= link_to 'Admin', complaint_path %></li>
@@ -34,3 +34,60 @@
 	</div>
 
 <% end %>
+
+<script type="text/javascript" class="example">
+$(document).ready(function()
+{
+	$('#social').qtip({
+		content: 'In the Social hub, you can engage in text or randomized video chat!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	$('#professional').qtip({
+		content: 'In the Professional hub, you can engage in text, randomized video chat, create and attend private group conferences!  You can also view all the conferences and events you are invited to.',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	<% if current_user and current_user.invitations.size > 0 %>
+	$('#professional2').qtip({
+		content: 'You have '<%= current_user.invitations.size %>' notifications!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	<% end %>
+	
+	$('#academic').qtip({
+		content: 'In the Academic hub, you can engage in private group conferences!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	$('#account').qtip({
+		content: 'To manage your account preferences, click here!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	$('#faq').qtip({
+		content: 'To get help and find answers to frequently asked questions, click here!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	
+});
+</script>

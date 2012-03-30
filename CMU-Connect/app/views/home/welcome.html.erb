@@ -1,30 +1,61 @@
 <h1>Welcome, <%= current_user.first_name%>!</h1>
 <p>To begin chatting with other Tartans, select one of the links below:</p>
 
+
 	<div id="bigbuttons">
+		
+		
 		<%= link_to('messages') do %>
-			<div class="message-button">
+			<div class="message-button" id="1">
 				<h2>Social</h2>
 				<%= image_tag('social.png')%> 
 			</div>
 		<% end %>
 
 		<%= link_to('calendar') do %>
-			<div class="message-button">
+			<div class="message-button" id="2">
 				<h2>Professional</h2>
 				<%= image_tag('professional.png')%> 
 			</div>
 		<% end %>
 
 		<%= link_to('messages') do %>
-			<div class="message-button">
+			<div class="message-button" id="3">
 				<h2>Academic</h2>
 				<%= image_tag('academic.png')%> 
 			</div>
 		<% end %>
 	</div>
 
-
+	<script type="text/javascript" class="example">
+	$(document).ready(function()
+	{
+		$('.message-button#1').qtip({
+			content: 'In the Social hub, you can engage in text or randomized video chat!',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			}
+		});
+		
+		$('.message-button#2').qtip({
+			content: 'In the Professional hub, you can engage in text, randomized video chat, create and attend private group conferences!  You can also view all the conferences and events you are invited to.',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			},
+		});
+		
+		$('.message-button#3').qtip({
+			content: 'In the Academic hub, you can engage in private group conferences!',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			}
+		});
+	});
+	</script>
+	
 
 	<div id="twitter">
 		<h2>CMU Connect News</h2>

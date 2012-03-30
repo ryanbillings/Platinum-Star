@@ -42,4 +42,19 @@ class InvitationsController < ApplicationController
     end
    end
 
+   def autocomplete
+     if params[:term]
+     @invitations = User.where("andrew LIKE ?","%#{params[:term]}%")
+     @users_hash = Array.new
+     @invitations.each do |invitation|
+       @users_hash.push(invitation.andrew)
+     end
+     else
+     @users_hash = Array.new
+     end
+     respond_to do |format|
+       format.json { render :json => @users_hash }
+     end
+   end
+
 end

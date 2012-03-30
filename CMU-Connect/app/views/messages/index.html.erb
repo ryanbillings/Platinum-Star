@@ -1,7 +1,6 @@
-<div id="chatbox" class="login">
 	<h1>Social Chat Lobby</h1>
 
-	<%= link_to (:roulette) do %>
+	<%= link_to 'roulette/social' do %>
 		<div class="green_button">
 			<%= image_tag("random.png") %> Enter Random Chat!
 		</div>
@@ -13,11 +12,11 @@
 	<h2>IM Chatroom</h2>
 
 
-	
+<div id="chatbox">	
 	<div id="active_users">
 		<h3>Other users logged on:</h3>
 		<% $logged_in_user.each do |i| %>
-		<%= User.find(i).username %><br />
+		<%= User.find(i).username %><br /><br />
 		<% end %>
 	</div>
 
@@ -32,3 +31,25 @@
 		  <%= f.submit "Send" %>
 		<% end %>
 </div><!-- end chatbox -->
+
+<script type="text/javascript" class="example">
+$(document).ready(function()
+{
+	$('.green_button').qtip({
+		content: 'To start a chatting socially with a random Tartan click here!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	$('#chatbox').qtip({
+		content: 'Start text chatting with other users currently in the Social Lobby!',
+		position: {
+			my: 'top right',
+			at: 'bottom center'
+		}
+	});
+	
+});
+</script>

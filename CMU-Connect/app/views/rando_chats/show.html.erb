@@ -3,14 +3,14 @@
 <div id = "nextdiv">
   <p>
     <h2>You're chat just ended. How did you like it?</h2>
-		<%= link_to "exchange/#{@rando_chat.id}/true/true" do %>
+		<%= link_to "exchange/#{@rando_chat.id}/true/true/#{@type}" do %>
 			<div class="afterchat-button">
 				<h3>Good, send them my Info!</h3>
 				<%= image_tag('yes.png')%> 
 			</div>
 		<% end %>
 		
-		<%= link_to "exchange/#{@rando_chat.id}/false/true" do %>
+		<%= link_to "exchange/#{@rando_chat.id}/false/true/#{@type}" do %>
 			<div class="afterchat-button">
 				<h3>Please don't disclose my info</h3>
 				<%= image_tag('no.png')%> 
@@ -29,13 +29,13 @@
 <div id = "disconnectdiv">
   <p>
     <h2>You're chat just ended. How did you like it?</h2>
-		<%= link_to "exchange/#{@rando_chat.id}/true/false" do %>
+		<%= link_to "exchange/#{@rando_chat.id}/true/false/#{@type}" do %>
 			<div class="afterchat-button">
 				<h3>Good, send them my Info!</h3>
 				<%= image_tag('yes.png')%> 
 			</div>
 		<% end %>
-		<%= link_to "exchange/#{@rando_chat.id}/false/false" do %>
+		<%= link_to "exchange/#{@rando_chat.id}/false/false/#{@type}" do %>
 			<div class="afterchat-button">
 				<h3>Please don't disclose my info</h3>
 				<%= image_tag('no.png')%> 
