@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.qtip
+//= require nested_form
 
 $(function() {
   var faye = new Faye.Client('http://localhost:9292/faye');

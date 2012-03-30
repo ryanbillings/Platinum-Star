@@ -13,7 +13,7 @@ CMUConnect::Application.routes.draw do
   match 'conferences/:id/confirm' => 'conferences#confirm', :as => :confirm
   match 'invitations/:id/invite' => 'invitations#invite'
   match 'invitations/create' => 'invitations#create'
-  
+  match 'invitations/autocomplete' => 'invitations#autocomplete'  
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup

@@ -9,13 +9,15 @@
 </style>
 <%= stylesheet_link_tag 'jquery-ui-1.8.16.custom.css' %>
 <%= javascript_include_tag 'jquery-1.6.4.min' %>
-<%= javascript_include_tag 'jquery-ui-1.8.16.custom.min' %>
+<%= javascript_include_tag 'jquery-ui' %>
 <%= javascript_include_tag 'jquery-ui-timepicker-addon' %>
-<script type="text/javascript"> 
-        $(function(){                           
-                $('#conference_start_time').datetimepicker({dateFormat: 'yy-mm-dd ', timeFormat: 'hh:mm tt', ampm: true});
-                $('#conference_end_time').datetimepicker({dateFormat: 'yy-mm-dd ', timeFormat: 'hh:mm tt', ampm: true});
-                });                     
+<script type="text/javascript">
+  $(function(){ 
+  $('#conference_start_time').datetimepicker({dateFormat: 'yy-mm-dd ', timeFormat: 'hh:mm tt', ampm: true});
+  $('#conference_end_time').datetimepicker({dateFormat: 'yy-mm-dd ', timeFormat: 'hh:mm tt', ampm: true});
+
+});
+                     
 </script>
 
 
