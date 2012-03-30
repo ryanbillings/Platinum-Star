@@ -34,9 +34,9 @@ CMUConnect::Application.routes.draw do
   
   match 'destroy' => 'users#destroy', :as => :delete_account
 
-  match 'roulette' => 'rando_chats#create', :as => :roulette
+  match 'roulette/:type' => 'rando_chats#create'
   match 'rando_chats/:id' => 'rando_chats#show' 
-  match 'rando_chats/exchange/:id/:match/:next' => 'rando_chats#exchange', :as => :exchange
+  match 'rando_chats/exchange/:id/:match/:next/:type' => 'rando_chats#exchange', :as => :exchange
   match 'complaint' => 'complaints#index', :as => :complaint
   
   match 'faq' => 'home#faq', :as => :faq
