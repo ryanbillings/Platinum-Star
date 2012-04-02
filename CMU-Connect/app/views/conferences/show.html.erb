@@ -1,6 +1,15 @@
 <% title "Conference" %>
 
 <p>
+<% if @conference.start_time <= Time.now and Time.now <= @conference.end_time %>
+ <%= link_to "JOIN CONFERENCE", :join_conference, :id => @conference.id, :class =>"join_button" %>
+<% end %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @conference.name %>
+</p>
+<p>
   <strong>Date:</strong>
   <%= @conference.start_time.strftime("%B %d, %Y") %>
 </p>
@@ -21,10 +30,7 @@
     <span>Academic</span>
   <% end %>
 </p>
-<p>
-  <strong>Name:</strong>
-  <%= @conference.name %>
-</p>
+
 <p>
   <strong>Description:</strong>
   <%= @conference.description %>
@@ -65,9 +71,5 @@
         </p>
 
 <br />
-<p>
-<% if @conference.start_time <= Time.now and Time.now <= @conference.end_time %>
- <%= link_to "JOIN CONFERENCE", :join_conference, :id => @conference.id %>
-<% end %>
-</p>
+
 </p>
