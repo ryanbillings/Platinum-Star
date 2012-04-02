@@ -36,8 +36,16 @@
   <p>
     <%= f.label "Public?" %>
     <%= f.check_box :public %>
-  </p>
- 
+  </p><br />
+  <p>
+    <%= f.label "Conference Type" %>
+    <p>
+    <strong>Professional</strong>
+    <%= f.radio_button :professional, true %>
+    <strong>Academic</strong>
+    <%= f.radio_button :professional, false %>
+    <br /><br />
+  </p> 
   <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>

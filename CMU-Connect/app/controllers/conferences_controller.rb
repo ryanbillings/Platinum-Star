@@ -44,6 +44,20 @@ class ConferencesController < ApplicationController
 	#UserMailer.deliver(.....)
       end
     end
+   
+    if @conference.professional
+      if @conference.public
+        @conference.color = "Crimson"
+      else
+        @conference.color = "Orange"
+      end
+    else
+      if @conference.public
+        @conference.color = "Blue"
+      else
+        @conference.color = "Yellow"
+      end
+    end
 
     host_user_conf = UserConf.new
     host_user_conf.user_id = current_user.id

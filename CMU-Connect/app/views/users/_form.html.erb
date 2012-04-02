@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'rails.validations' %>
+<%# javascript_include_tag 'rails.validations' %>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="http://craigsworks.com/projects/qtip2/packages/latest/jquery.qtip.min.js"></script>
 <%# javascript_include_tag 'rails.validations.custom' %>
@@ -6,7 +6,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :andrew, 'AndrewID' %><br />
-    <%= f.text_field :andrew %>
+    <%= f.text_field :andrew, :id => 'andrew' %>
   </p>
   <p>
     <%= f.label :username %><br />

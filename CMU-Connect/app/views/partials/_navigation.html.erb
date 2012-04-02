@@ -10,7 +10,7 @@
 			<% else %>
 			<li id="professional"><%= link_to "Professional", :calendar %></li>
 			<% end %>
-			<li id="academic"><%= link_to 'Academic', messages_path %></li>
+			<li id="academic"><%= link_to 'Academic', :calendar %></li>
 			<li id="account"><%= link_to 'My Account', edit_user_path(current_user) %></li>	
 			<li id="faq"><%= link_to 'FAQs', :faq %></li>
 			<li><%= link_to 'Logout', logout_path %></li>

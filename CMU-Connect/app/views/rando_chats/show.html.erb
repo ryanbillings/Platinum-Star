@@ -1,5 +1,11 @@
 <%= stylesheet_link_tag "tokbox_layout", :media => "all" %>
 <%= javascript_include_tag "tokbox_layout" %>
+
+<script type = "text/javascript">
+window.onbeforeunload = function (e) {
+  jQuery.ajax('/rando_chats/exit_window/<%= @rando_chat.id %>', { method:'get' });
+};
+</script>
 <div id = "nextdiv">
   <p>
     <h2>You're chat just ended. How did you like it?</h2>
@@ -17,12 +23,12 @@
 			</div>
 		<% end %>
 		
-		<%= link_to :roulette do %>
+		<a href = "#" onClick="report()">
 			<div class="afterchat-button">
 				<h3>Report inappropriate behavior</h3>
 				<%= image_tag('report.png')%> 
 						</div>
-		<% end %>
+		</a>
   </p>
 </div>
 
