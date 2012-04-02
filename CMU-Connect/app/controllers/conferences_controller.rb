@@ -44,13 +44,15 @@ class ConferencesController < ApplicationController
 	#UserMailer.deliver(.....)
       end
     end
-   
+  
+    # Professional 
     if @conference.professional
       if @conference.public
         @conference.color = "Crimson"
       else
         @conference.color = "Orange"
       end
+    # Academic
     else
       if @conference.public
         @conference.color = "Blue"
@@ -110,7 +112,7 @@ class ConferencesController < ApplicationController
     end
     # Otherwise confirm the meeting
     user_conf.update_attribute(:confirmed, true)
-    redirect_to conferences_url, :notice => "Successfully Confirmed Invitation"
+    redirect_to calendar_url, :notice => "Successfully Confirmed Invitation"
   end
 
   private

@@ -16,7 +16,7 @@
 //= require nested_form
 
 $(function() {
-  var faye = new Faye.Client('http://localhost:9292/faye');
+  var faye = new Faye.Client('http://blooming-day-4197.herokuapp.com/faye');
   faye.subscribe("/messages/new", function(data) {
     eval(data);
   });
