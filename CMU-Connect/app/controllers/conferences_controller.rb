@@ -48,16 +48,16 @@ class ConferencesController < ApplicationController
     # Professional 
     if @conference.professional
       if @conference.public
-        @conference.color = "Crimson"
+        @conference.color = "#FF1600"
       else
-        @conference.color = "Orange"
+        @conference.color = "#990900"
       end
     # Academic
     else
       if @conference.public
-        @conference.color = "Blue"
+        @conference.color = "#000CFF"
       else
-        @conference.color = "Yellow"
+        @conference.color = "#001299"
       end
     end
 
