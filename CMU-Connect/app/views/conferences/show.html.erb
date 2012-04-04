@@ -1,6 +1,15 @@
 <% title "Conference" %>
 
 <p>
+<% if @conference.start_time <= Time.now and Time.now <= @conference.end_time %>
+ <%= link_to "JOIN CONFERENCE", :join_conference, :id => @conference.id, :class =>"join_button" %>
+<% end %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @conference.name %>
+</p>
+<p>
   <strong>Date:</strong>
   <%= @conference.start_time.strftime("%B %d, %Y") %>
 </p>
@@ -13,11 +22,15 @@
   <strong>Public:</strong>
   <%= @conference.public %>
 </p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @conference.name %>
+  <strong>Type:</strong>
+  <% if @conference.professional %>
+    <span>Professional</span>
+  <% else %>
+    <span>Academic</span>
+  <% end %>
 </p>
+
 <p>
   <strong>Description:</strong>
   <%= @conference.description %>
@@ -26,17 +39,10 @@
   <strong>Host:</strong>
   <%= User.find(@conference.host_id).first_name %>
 </p>
-
-<p>
-  <%= link_to "Edit", edit_conference_path(@conference) %> |
-  <%= link_to "Destroy", @conference, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", conferences_path %>
-</p>
-
     <h3>Attending Users</h3>
         <div>
           <% @users.each do |user| %>
-                <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
+                <%=  "#{user.name}" %>
                 <br />
           <% end %>
         </div>
@@ -44,7 +50,7 @@
         <h3>Pending Invitation</h3>
         <div>
           <% @pending.each do |user| %>
-                <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
+                <%= "#{user.name}" %>
           <br />
           <% end %>
         </div>
@@ -56,13 +62,14 @@
         <p>
           <% if current_user.id == @host.id %>
                 <%= link_to "Invite Users", :controller => "invitations", :action => "invite", :id => @conference.id %>
+		<p>
+  		<%= link_to "Edit", edit_conference_path(@conference) %> |
+  		<%= link_to "Destroy", @conference, :confirm => 'Are you sure?', :method => :delete %> |
+  		<%= link_to "View All", conferences_path %>
+		</p>
           <% end%>
         </p>
 
 <br />
-<p>
-<% if @conference.start_time <= Time.now and Time.now <= @conference.end_time %>
- <%= link_to "JOIN CONFERENCE", :join_conference, :id => @conference.id %>
-<% end %>
-</p>
+
 </p>

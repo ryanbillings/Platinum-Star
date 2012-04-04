@@ -1,5 +1,5 @@
 class Conference < ActiveRecord::Base
-  attr_accessible :start_time, :end_time, :public, :sessionId, :name, :description, :host_id, :user_confs_attributes
+  attr_accessible :start_time, :end_time, :public, :sessionId, :name, :description, :host_id, :professional,:user_confs_attributes
   has_event_calendar :start_at_field => 'start_time', :end_at_field => 'end_time', :name_field => 'name'
   has_many :user_confs, :dependent => :destroy
   has_many :users, :through => :user_confs

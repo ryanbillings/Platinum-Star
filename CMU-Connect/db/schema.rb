@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(:version => 20120320225626) do
     t.string   "name"
     t.text     "description"
     t.integer  "host_id"
+    t.boolean  "professional"
     t.string   "color"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "exchanges", :force => true do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20120320225626) do
     t.integer  "u1_id"
     t.integer  "u2_id"
     t.boolean  "social"
+    t.string   "status"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

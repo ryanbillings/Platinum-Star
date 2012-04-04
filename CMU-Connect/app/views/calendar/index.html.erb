@@ -4,12 +4,12 @@
 <%= stylesheet_link_tag "event_calendar" %>
 <%= javascript_include_tag :event_calendar %>
 
-<h1>Professional Chat Lobby</h1>
+<h1>Professional/Academic Lobby</h1>
   
 
 <div class="block">
 	
-	<% if @notifications.nil? %>
+	<% if @notifications.empty? == false %>
 		<div id="notifications">
 		    <h3>Notifications:</h3> <br/>
 		    <!-- Show all pending invites -->
@@ -42,11 +42,10 @@
 		
 	<br/>
 	<div id="calendar">
-		<h2>Calendar of Conferences</h2>
 		<%= raw(event_calendar) %>
 	</div>
 
-	<script type="text/javascript" class="example">
+<script type="text/javascript" class="example">
 	$(document).ready(function()
 	{
 		$('.green_button').qtip({
@@ -73,4 +72,4 @@
 		});
 
 	});
-	</script>
+</script>

@@ -128,10 +128,18 @@ p {
 	border-color: rgba(0, 0, 0, 0.1);
 	padding: 15px 20px;
 	margin: 5px;
-	color: #FFF;
-	font-size: 15px;
 	position: relative;
 	vertical-align:middle;
+	border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .green_button img{
@@ -148,7 +156,6 @@ p {
 	background-image: -moz-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
 	background-image: -webkit-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
 	background-image: -ms-linear-gradient(bottom, rgb(0,68,204) 25%, rgb(0,136,204) 75%);
-
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
@@ -159,16 +166,51 @@ p {
 	border-color: rgba(0, 0, 0, 0.1);
 	padding: 15px 20px;
 	margin: 5px;
-	color: #FFF;
-	font-size: 15px;
 	position: relative;
 	vertical-align:middle;
+	border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 0;
+    text-align: center;
+	
 }
 
 .blue_button img{
 	vertical-align:middle;
 	padding-right: 10px;
 }
+
+
+.join_button{
+	background-color: #5BB75B;
+	background-image: -moz-linear-gradient(center top , #62C462, #51A351);
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 0;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.join_button:hover{
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
 
 #active_users {
 	float: right;
@@ -373,12 +415,22 @@ input{
 input[name=commit]{
 	font-size: 12px;
 	border-radius: 4px;
-	border: 1px solid #104E8B;
 	padding: 5px 10px;
 	background-color: #49AFCD;
 	background-image: -moz-linear-gradient(center top , #5BC0DE, #2F96B4);
 	color: #fff;
 	text-decoration: none;
+	margin: 5px;
+	position: relative;
+	vertical-align:middle;
+	border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    display: inline-block;
+    line-height: 18px;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 input[name=commit]a:hover {

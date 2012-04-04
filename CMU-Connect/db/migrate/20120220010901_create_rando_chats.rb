@@ -5,6 +5,7 @@ class CreateRandoChats < ActiveRecord::Migration
       t.integer :u1_id
       t.integer :u2_id
       t.boolean :social
+      t.string :status
       t.timestamps
     end
   end

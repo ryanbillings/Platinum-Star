@@ -57,7 +57,6 @@ module CMUConnect
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
- 
     $rando_queue = 0
     $logged_in_user = Array.new
   end

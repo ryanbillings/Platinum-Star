@@ -1,4 +1,5 @@
 class ConferencesController < ApplicationController
+ before_filter :login_required
   def index
     @conferences = Conference.all
   end
@@ -41,6 +42,22 @@ class ConferencesController < ApplicationController
 	uc.confirmed = false
 	#We should add a mailer here..something like
 	#UserMailer.deliver(.....)
+      end
+    end
+  
+    # Professional 
+    if @conference.professional
+      if @conference.public
+        @conference.color = "#FF1600"
+      else
+        @conference.color = "#990900"
+      end
+    # Academic
+    else
+      if @conference.public
+        @conference.color = "#000CFF"
+      else
+        @conference.color = "#001299"
       end
     end
 
@@ -95,7 +112,7 @@ class ConferencesController < ApplicationController
     end
     # Otherwise confirm the meeting
     user_conf.update_attribute(:confirmed, true)
-    redirect_to conferences_url, :notice => "Successfully Confirmed Invitation"
+    redirect_to calendar_url, :notice => "Successfully Confirmed Invitation"
   end
 
   private

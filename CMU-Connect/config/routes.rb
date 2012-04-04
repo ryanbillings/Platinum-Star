@@ -6,6 +6,7 @@ CMUConnect::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :surveys
+  resources :messages
   resources :complaints
   resources :conferences
   match '/conference/video/:id' => 'conferences#video', :as => :join_conference
@@ -15,7 +16,6 @@ CMUConnect::Application.routes.draw do
   match 'invitations/create' => 'invitations#create'
   match 'invitations/autocomplete' => 'invitations#autocomplete'  
   match 'user/edit' => 'users#edit', :as => :edit_current_user
-
   match 'signup' => 'users#new', :as => :signup
 
   match 'logout' => 'sessions#destroy', :as => :logout
@@ -37,13 +37,13 @@ CMUConnect::Application.routes.draw do
   match 'roulette/:type' => 'rando_chats#create'
   match 'rando_chats/:id' => 'rando_chats#show' 
   match 'rando_chats/exchange/:id/:match/:next/:type' => 'rando_chats#exchange', :as => :exchange
+  match 'rando_chats/exit_window/:id' => 'rando_chats#exit_window'
   match 'complaint' => 'complaints#index', :as => :complaint
   
   match 'faq' => 'home#faq', :as => :faq
   
   match 'calendar' => 'calendar#index', :as => :calendar
   resources :rando_chats  
-  resources :messages
   resources :sessions
   resources :users
  

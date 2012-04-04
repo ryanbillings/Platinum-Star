@@ -8,6 +8,7 @@ class CreateConferences < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :host_id
+      t.boolean :professional
       t.string :color
       t.timestamps
     end

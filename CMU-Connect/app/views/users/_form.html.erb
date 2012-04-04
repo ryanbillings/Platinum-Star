@@ -1,18 +1,20 @@
-<%= javascript_include_tag 'rails.validations' %>
+<%# javascript_include_tag 'rails.validations' %>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="http://craigsworks.com/projects/qtip2/packages/latest/jquery.qtip.min.js"></script>
 <%# javascript_include_tag 'rails.validations.custom' %>
 <%= form_for @user, :validate => true do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :andrew, 'AndrewID' %><br />
-    <%= f.text_field :andrew %>
+    <%= f.text_field :andrew, :id => 'andrew' %>
   </p>
   <p>
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :password, "Password  (Do not use your AndrewID password)" %><br />
-    <%= f.password_field :password %>
+    <%= f.label :password, "Password" %><br />
+    <%= f.password_field :password, :id => "password" %>
   </p>
   <p>
     <%= f.label :password_confirmation, "Confirm Password" %><br />
@@ -22,3 +24,19 @@
 <% end %>
 
 
+<script type="text/javascript" class="example">
+	$(document).ready(function()
+	{
+		$('#password').qtip({
+			content: 'Do not use your AndrewID password!',
+			position: {
+				my: 'left center',
+				at: 'right center'
+			},
+			show: {
+				event: 'click mouseenter active',
+				select: true
+			}
+		});
+	});
+</script>
