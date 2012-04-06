@@ -87,7 +87,7 @@ $(document).ready(function()
 			<li id="faq"><%= link_to 'FAQs', :faq %></li>
 			<li><%= link_to 'Logout', logout_path %></li>
 			<% if current_user.role == "admin"  %>
-			<li><%= link_to 'Admin', complaint_path %></li>
+			<li><%= link_to 'Admin', :admin %></li>
 			<%end %>
 			<ul>
 		</div>

@@ -10,12 +10,19 @@ class Ability
 	
     if user.role? == "admin" 
 	 puts "admin"
-      can :manage, :all
+          can :manage, :all
 	  can :index, Complaint
+          can :manage, Survey
+          can :manage, ThemeChat
     elsif user.role? == "default"
 	puts "default"
       can :manage, :all
+      cannot :manage, Complaint
       can :create, Complaint
+      cannot :manage, Survey
+      can :show, Survey
+      cannot :manage, ThemeChat
+      can :show, ThemeChat
     elsif user.role? == "banned"
 	  cannot :manage, :all
 	  can :show, :all
