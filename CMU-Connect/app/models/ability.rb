@@ -23,9 +23,9 @@ class Ability
       can :show, Survey
       cannot :manage, ThemeChat
       can :show, ThemeChat
+      cannot :index, ThemeChat
     elsif user.role? == "banned"
 	  cannot :manage, :all
-	  can :show, :all
     end
       
   
