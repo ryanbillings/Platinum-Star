@@ -1,0 +1,168 @@
+<h1>Welcome, <%= current_user.first_name%>!</h1>
+<p>To begin chatting with other Tartans, select one of the links below:</p>
+
+
+	<div id="bigbuttons">
+		
+		
+		<%= link_to('messages') do %>
+			<div class="message-button" id="1">
+				<h2>Social</h2>
+				<%= image_tag('social.png')%> 
+			</div>
+		<% end %>
+
+		<%= link_to('calendar') do %>
+			<div class="message-button" id="2">
+				<h2>Professional</h2>
+				<%= image_tag('professional.png')%> 
+			</div>
+		<% end %>
+
+		<%= link_to('calendar') do %>
+			<div class="message-button" id="3">
+				<h2>Academic</h2>
+				<%= image_tag('academic.png')%> 
+			</div>
+		<% end %>
+	</div>
+
+	<script type="text/javascript" class="example">
+	$(document).ready(function()
+	{
+		$('.message-button#1').qtip({
+			content: 'In the Social hub, you can engage in text or randomized video chat!',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			}
+		});
+		
+		$('.message-button#2').qtip({
+			content: 'In the Professional hub, you can engage in text, randomized video chat, create and attend private group conferences!  You can also view all the conferences and events you are invited to.',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			},
+		});
+		
+		$('.message-button#3').qtip({
+			content: 'In the Academic hub, you can engage in private group conferences!',
+			position: {
+				my: 'top center',
+				at: 'bottom center'
+			}
+		});
+		$("#social").live("mouseover", function() {
+		$(this).qtip({
+		overwrite: false,
+		show: {
+                ready: true,
+                event: 'mouseenter',
+                delay: 0,
+                solo: true
+            },
+		content: 'In the Social hub, you can engage in text or randomized video chat!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	});
+	/*
+	$('#professional').qtip({
+		content: 'In the Professional hub, you can engage in text, randomized video chat, create and attend private group conferences!  You can also view all the conferences and events you are invited to.',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	<% if current_user and current_user.invitations.size > 0 %>
+	$('#professional2').qtip({
+		content: 'You have '<%= current_user.invitations.size %>' notifications!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	<% end %>
+	
+	$('#academic').qtip({
+		content: 'In the Academic hub, you can engage in private group conferences!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	$('#account').qtip({
+		content: 'To manage your account preferences, click here!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	$('#faq').qtip({
+		content: 'To get help and find answers to frequently asked questions, click here!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	$('#privacy').qtip({
+		content: 'To view our privacy statement, click here!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});
+	
+	$('#contact').qtip({
+		content: 'To contact the webmaster, click here!',
+		position: {
+			my: 'top center',
+			at: 'bottom center'
+		}
+	});*/
+	});
+	</script>
+	
+
+	<div id="twitter">
+		<h2>CMU Connect News</h2>
+		
+		<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+			<script>
+			new TWTR.Widget({
+			  version: 2,
+			  type: 'profile',
+			  rpp: 4,
+			  interval: 30000,
+			  width: 775,
+			  height: 200,
+			  theme: {
+			    shell: {
+			      background: '#cfe2ee',
+			      color: '#000000'
+			    },
+			    tweets: {
+			      background: '#ffffff',
+			      color: '#000000',
+			      links: '#00afef'
+			    }
+			  },
+			  features: {
+			    scrollbar: false,
+			    loop: false,
+			    live: false,
+			    behavior: 'all'
+			  }
+			}).render().setUser('CMU_Connect').start();
+			</script>
+		</div>
+
+	
+

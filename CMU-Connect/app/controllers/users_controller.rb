@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user.email = andrew_user.email
     @user.grade = andrew_user.grade
     @user.major = andrew_user.department
-	@user.role = "default"
+    @user.role = "default"
     if @user.save
       session[:user_id] = @user.id
       redirect_to :welcome, :notice => "Thank you for signing up! You are now logged in."
