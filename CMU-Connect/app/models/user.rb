@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   def name
     return "#{self.first_name} #{self.last_name}"
   end  
-  
+
   
   attr_accessor :password
   before_save :prepare_password

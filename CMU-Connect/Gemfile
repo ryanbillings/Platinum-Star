@@ -18,6 +18,17 @@ gem 'cmu_person'
 gem 'client_side_validations'
 gem 'event-calendar', :require => 'event_calendar'
 gem "nested_form"
+
+#Populator
+group :development do
+	gem 'wirble'
+	gem 'hirb'
+	gem 'annotate'
+	gem 'populator3'
+	gem 'faker'
+end
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
