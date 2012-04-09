@@ -5,9 +5,33 @@
 			<%= image_tag("random.png") %> Enter Random Chat!
 		</div>
 	<% end %>
+        <% if @theme_chat %>
+	<%= link_to "/theme_chat/video/#{@theme_chat.id}" do %>
+		<div class="green_button">
+                <h4><%= @theme_chat.name %></h4>
+                <p><%= @theme_chat.description %></p>
+	        <%= image_tag("random.png") %> Join Theme Chat!
+		</div>
+	<% end %>
+        <% end %>
 
 	<p>Find out who's online in the IM Chatroom below, or select the button on the right to start video chatting with other Tartans!</p>
-
+         <!-- Surveys and Topics -->
+           <% if @survey %>
+	   <div>
+             <ul>
+             <% for topic in @topics %>     
+            <!-- If a user has voted, show them the results -->
+               <% if @vote %>
+                 <li><%= topic.name %> : <%= topic.count %></li>   
+            <!-- Otherwise, let them vote -->
+                <% else %>
+                  <li><%= topic.name %> : <%= link_to "Vote", "topics/vote/#{@survey.id}/#{topic.id}" %></li>
+                <% end %>
+             <% end %>
+             </ul>
+            </div>
+           <% end %>
 	
 	<h2>IM Chatroom</h2>
 

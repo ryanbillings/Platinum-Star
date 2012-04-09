@@ -17,13 +17,13 @@
 	float: left;
 	width: 300px;
 	height: 225px;
-	margin-right: 10px;
-	margin-top: -50px;
+
 }
 
-#videobox object:nth-child(1) {
-	width: 400px;
-	height: 300px;
+#videobox:nth-child(1) {
+	position: relative;
+	left: 20px;
+	top: 400px;
 }
 
 #nextdiv {

@@ -3,7 +3,7 @@ class CreateTopics < ActiveRecord::Migration
     create_table :topics do |t|
       t.integer :count
       t.integer :survey_id
-
+      t.string :name
       t.timestamps
     end
   end

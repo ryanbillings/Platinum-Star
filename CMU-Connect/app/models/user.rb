@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :complaints
   has_many :user_confs
   has_many :conferences, :through => :user_confs 
+  has_many :survey_users, :dependent => :destroy
+  has_many :surveys, :through => :survey_users
   ROLES = %w[admin default banned]
   
   
@@ -18,8 +20,6 @@ class User < ActiveRecord::Base
 
   
   attr_accessor :password
-  before_save :prepare_password
-
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :allow_blank => true
   validates_format_of :username, :with => /^[-\w\._@]+$/i, :allow_blank => true, :message => "should only contain letters, numbers, or .-_@"
@@ -45,7 +45,6 @@ class User < ActiveRecord::Base
   end
 
   private
-
   def prepare_password
     unless password.blank?
       self.password_salt = BCrypt::Engine.generate_salt

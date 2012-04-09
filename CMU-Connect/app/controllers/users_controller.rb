@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user.email = andrew_user.email
     @user.grade = andrew_user.grade
     @user.major = andrew_user.department
-	@user.role = "default"
+    @user.role = "default"
     if @user.save
       session[:user_id] = @user.id
       redirect_to :welcome, :notice => "Thank you for signing up! You are now logged in."
@@ -41,9 +41,14 @@ class UsersController < ApplicationController
   end
   
   def destroy
+     if current_user.id != params[:id]
+       redirect_to :root
+       return
+     end
      @user = User.find(params[:id])
      session[:user_id] = nil
      @user.destroy
      redirect_to :landing, :notice => "Your account has been deleted."
   end
+
 end

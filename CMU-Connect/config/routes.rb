@@ -1,15 +1,17 @@
 CMUConnect::Application.routes.draw do
 
 
-  ActiveAdmin.routes(self)
+  #ActiveAdmin.routes(self)
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  #devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :surveys
   resources :messages
   resources :complaints
   resources :conferences
+  resources :theme_chats
   match '/conference/video/:id' => 'conferences#video', :as => :join_conference
+  match '/theme_chat/video/:id' => 'theme_chats#video'
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   match 'conferences/:id/confirm' => 'conferences#confirm', :as => :confirm
   match 'invitations/:id/invite' => 'invitations#invite'
@@ -33,6 +35,7 @@ CMUConnect::Application.routes.draw do
   match 'contact' => 'home#contact', :as => :contact
   
   match 'destroy' => 'users#destroy', :as => :delete_account
+  match 'admin' => 'home#admin', :as => :admin
 
   match 'roulette/:type' => 'rando_chats#create'
   match 'rando_chats/:id' => 'rando_chats#show' 
@@ -43,6 +46,7 @@ CMUConnect::Application.routes.draw do
   match 'faq' => 'home#faq', :as => :faq
   
   match 'calendar' => 'calendar#index', :as => :calendar
+  match 'topics/vote/:survey/:topic' => 'topics#vote'
   resources :rando_chats  
   resources :sessions
   resources :users

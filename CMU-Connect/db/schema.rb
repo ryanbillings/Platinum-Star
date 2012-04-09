@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20120320225626) do
   create_table "topics", :force => true do |t|
     t.integer  "count"
     t.integer  "survey_id"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

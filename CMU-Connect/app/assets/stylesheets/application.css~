@@ -66,11 +66,11 @@ p {
 #navigation li a
 {
 	color: #404040;
-	font-size: 12px;
+	font-size: 14px;
 	text-decoration: none;
 	padding: 5px 10px;
 }
-
+/*
 #navigation li a:hover
 {
 	background-color: #00AEEF;
@@ -79,7 +79,7 @@ p {
 	color: #cfe2ee;
 	padding: 5px 10px;
 }
-
+*/
 .message-button {
 	width: 205px;
 	height: 180px;

@@ -2,6 +2,7 @@ require 'rake'
 
 namespace :populate do
   task :pop => :environment do
+<<<<<<< HEAD
    
    require 'populator'
    require 'faker'
@@ -10,11 +11,15 @@ namespace :populate do
 
   
 	
+=======
+
+>>>>>>> dc7e9512e6dfe7d78bcc872d3276a61258262f28
   user = User.new
   user.username = "Joe"
   user.andrew = "Shmoe"
   user.password = "password"
   user.email = "fffffffff@example.com"
+<<<<<<< HEAD
   user.role = "default"
   user.save!
 
@@ -104,3 +109,9 @@ namespace :populate do
   
   end
 end
+=======
+  user.save!
+
+  end
+end
+>>>>>>> dc7e9512e6dfe7d78bcc872d3276a61258262f28

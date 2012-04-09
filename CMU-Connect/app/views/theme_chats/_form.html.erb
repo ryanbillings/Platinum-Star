@@ -1,3 +1,24 @@
+<style type = "text/css">
+/* css for timepicker */
+        .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+        .ui-timepicker-div dl { text-align: left; }
+        .ui-timepicker-div dl dt { height: 25px; }
+        .ui-timepicker-div dl dd { margin: -25px 10px 10px 65px; }
+        .ui-timepicker-div td { font-size: 90%; }
+        .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+</style>
+<%= stylesheet_link_tag 'jquery-ui-1.8.16.custom.css' %>
+<%= javascript_include_tag 'jquery-1.6.4.min' %>
+<%= javascript_include_tag 'jquery-ui' %>
+<%= javascript_include_tag 'jquery-ui-timepicker-addon' %>
+<script type="text/javascript">
+  $(function(){ 
+  $('#theme_chat_start_date').datetimepicker({dateFormat: 'yy-mm-dd ', timeFormat: 'hh:mm tt', ampm: true});
+  $('#theme_chat_end_date').datetimepicker({dateFormat: 'yy-mm-dd ', timeFormat: 'hh:mm tt', ampm: true});
+
+});
+</script>
+
 <%= form_for @theme_chat do |f| %>
   <%= f.error_messages %>
   <p>
@@ -9,16 +30,10 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :start_date %><br />
-    <%= f.datetime_select :start_date %>
-  </p>
-  <p>
-    <%= f.label :end_date %><br />
-    <%= f.datetime_select :end_date %>
-  </p>
-  <p>
-    <%= f.label :sessionId %><br />
-    <%= f.text_field :sessionId %>
-  </p>
-  <p><%= f.submit %></p>
+  <%= f.label "Theme Chat Time:" %><br />
+  <input type = "text" name="theme_chat[start_date]" id="theme_chat_start_date" value = ""> to 
+  <input type = "text" name="theme_chat[end_date]" id="theme_chat_end_date" value = "">
+ </p>
+
+   <p><%= f.submit %></p>
 <% end %>
