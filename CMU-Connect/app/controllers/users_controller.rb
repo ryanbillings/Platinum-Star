@@ -41,9 +41,14 @@ class UsersController < ApplicationController
   end
   
   def destroy
+     if current_user.id != params[:id]
+       redirect_to :root
+       return
+     end
      @user = User.find(params[:id])
      session[:user_id] = nil
      @user.destroy
      redirect_to :landing, :notice => "Your account has been deleted."
   end
+
 end
