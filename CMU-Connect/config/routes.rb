@@ -41,7 +41,7 @@ CMUConnect::Application.routes.draw do
   match 'rando_chats/:id' => 'rando_chats#show' 
   match 'rando_chats/exchange/:id/:match/:next/:type' => 'rando_chats#exchange', :as => :exchange
   match 'rando_chats/exit_window/:id' => 'rando_chats#exit_window'
-  match 'complaint' => 'complaints#index', :as => :complaint
+  #match 'complaint' => 'complaints#index', :as => :complaint
   
   match 'faq' => 'home#faq', :as => :faq
   

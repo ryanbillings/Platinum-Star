@@ -60,7 +60,8 @@ window.onbeforeunload = function (e) {
 <div id = "reportdiv">
 				  <h4>Please give a quick description of the inappropriate behavior</h4>
 				  <%= form_for @complaint, :controller => 'complaints', :action => 'create' do |f| %>
-				    <%= f.label :description %>
+				    <%= f.hidden_field :rando_chat_id, :value => @rando_chat.id %>
+                                    <%= f.label :description %>
 				    <%= f.text_area :description %>
 				    <%= f.submit %>
     				<% end %>
@@ -94,7 +95,7 @@ window.onbeforeunload = function (e) {
 	   	function disconnect() {
 		  session.disconnect();
 	          session.cleanup();
-			document.getElementById('disconnectdiv').style.display = 'block';
+	          document.getElementById('disconnectdiv').style.display = 'block';
 	          document.getElementById('rando_content').style.display = 'none';
 		}
   

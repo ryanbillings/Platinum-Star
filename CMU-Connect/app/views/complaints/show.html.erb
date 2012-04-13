@@ -1,8 +1,12 @@
 <% title "Complaint" %>
 
 <p>
-  <strong>Username:</strong>
-  <%= @complaint.user_id.username %>
+  <strong>Reported User:</strong>
+  <%= @complaint.to_user %>
+</p>
+<p>
+  <strong>Submitted By:</strong>
+  <%= @complaint.from_user %>
 </p>
 <p>
   <strong>Description:</strong>

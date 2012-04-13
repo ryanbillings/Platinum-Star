@@ -15,9 +15,11 @@ ActiveRecord::Schema.define(:version => 20120320225626) do
 
   create_table "complaints", :force => true do |t|
     t.text     "description"
-    t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "rando_chat_id"
+    t.string   "to_user"
+    t.string   "from_user"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "conferences", :force => true do |t|

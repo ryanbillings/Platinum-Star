@@ -19,7 +19,19 @@ load_and_authorize_resource
 
   def create
     @complaint = Complaint.new(params[:complaint])
-    @complaint.user_id = current_user.id
+    @rando_chat = RandoChat.find(params[:complaint][:rando_chat_id])
+    if current_user.id == @rando_chat.u1_id
+      reported_user = User.find(@rando_chat.u2_id)
+    else
+      reported_user = User.find(@rando_chat.u1_id)
+    end
+    if reported_user.nil?
+      redirect_to :welcome
+      return 
+   end
+    reported_user_name = reported_user.andrew
+    @complaint.to_user = reported_user_name
+    @complaint.from_user = current_user.andrew
     if @complaint.save
       redirect_to :welcome, :notice => "Successfully reported user."
     else
@@ -41,9 +53,9 @@ load_and_authorize_resource
   end
 
   def destroy
-    @survey = Survey.find(params[:id])
-    @survey.destroy
-    redirect_to surveys_url, :notice => "Successfully destroyed survey."
+    @complaint = Complaint.find(params[:id])
+    @complaint.destroy
+    redirect_to complaints_url, :notice => "Successfully destroyed complaint"
   end
 
 
