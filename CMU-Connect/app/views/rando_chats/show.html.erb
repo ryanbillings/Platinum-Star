@@ -62,7 +62,7 @@ window.onbeforeunload = function (e) {
 				  <%= form_for @complaint, :controller => 'complaints', :action => 'create' do |f| %>
 				    <%= f.hidden_field :rando_chat_id, :value => @rando_chat.id %>
                                     <%= f.label :description %>
-				    <%= f.text_area :description %>
+				    <%= f.text_area :description %> <br/>
 				    <%= f.submit %>
     				<% end %>
 
