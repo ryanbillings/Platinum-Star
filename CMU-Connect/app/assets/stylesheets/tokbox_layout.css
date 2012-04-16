@@ -59,6 +59,11 @@
   font-size: 16px;
   text-align: center;
 }
+#complaint_description{
+	width: 350px;
+	height: 100px;
+}
+
 .afterchat-button {
 	width: 205px;
 	height: 200px;

@@ -1,30 +1,156 @@
-<%= stylesheet_link_tag "tokbox_professional_layout", :media => "all" %>
 <%= javascript_include_tag "tokbox_professional_layout" %>
-<h1>Theme: <%= @theme_chat.name %></h1>
-<h4><%= @theme_chat.description %></h4>
-
-
-<div id = "videobox">
-        <h2>You:</h2>
-
- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
-        <script type="text/javascript">
+<script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
+<script type="text/javascript" charset="utf-8">	
                 var apiKey = 11368202; 
                 var sessionId = "<%= @theme_chat.sessionId %>"; 
                 var token = "<%= @tok_token %>"; 
 
-
-                var session = TB.initSession(sessionId);
-                TB.addEventListener('exception', exceptionHandler);
-
-                //Video chat event listeners
-                session.addEventListener('sessionConnected', sessionConnectedHandler);
-                session.addEventListener('streamCreated', streamCreatedHandler);
-                session.addEventListener('streamDestroyed', streamDestroyedHandler);
-
-                session.connect(apiKey,token);
-</script>
-
-</div>
+// Add to the page using the OpenTok server-side libraries.
+		var session;
 
 
+		var accessEntered = false;
+ 
+		// Un-comment either of the following to set automatic logging and exception handling.
+		// See the exceptionHandler() method below.
+		// TB.setLogLevel(TB.DEBUG);
+		TB.addEventListener("exception", exceptionHandler);
+ 
+		if (TB.checkSystemRequirements() != TB.HAS_REQUIREMENTS) {
+			alert("You don't have the minimum requirements to run this application."
+				  + "Please upgrade to the latest version of Flash.");
+		} else {
+			// Initialize the session
+			session = TB.initSession(sessionId);
+ 
+			// Add event listeners to the session
+			session.addEventListener('sessionConnected', sessionConnectedHandler);
+			session.addEventListener('streamCreated', streamCreatedHandler);
+			session.addEventListener('streamDestroyed', streamDestroyedHandler);
+
+			// Initialize the layout container
+			OT_LayoutContainer.init("streamContainer", 800, 544); 
+		}
+ 
+		//--------------------------------------
+		//  LINK CLICK HANDLERS
+		//--------------------------------------
+ 
+		/*
+		If testing the app from the desktop, be sure to check the Flash Player Global Security setting
+		to allow the page from communicating with SWF content loaded from the web. For more information,
+		see http://www.tokbox.com/opentok/build/tutorials/helloworld.html#localTest
+		*/
+		function connect() {
+			session.connect(apiKey, token);
+		}
+ 
+		function disconnect() {
+			session.disconnect();
+		}
+ 
+		//--------------------------------------
+		//  OPENTOK EVENT HANDLERS
+		//--------------------------------------
+ 
+		function sessionConnectedHandler(event) {
+		    // Publish my stream to the session
+			publishStream();			
+
+			// Subscribe to all streams currently in the Session
+			subscribeToStreams(event.streams);
+		}
+ 
+		function streamCreatedHandler(event) {
+			// Subscribe to the newly created streams
+			subscribeToStreams(event.streams);
+
+			// Re-layout the container with the new streams
+			if (accessEntered) {
+				OT_LayoutContainer.layout();
+			}
+		}
+ 
+		function streamDestroyedHandler(event) {	
+			// Get all destroyed streams		
+			for (var i = 0; i < event.streams.length; i++) {
+				// For each stream get the subscriber to that stream
+				var subscribers = session.getSubscribersForStream(event.streams[i]);
+				for (var j = 0; j < subscribers.length; j++) {
+					// Then remove each stream
+					OT_LayoutContainer.removeStream(subscribers[j].id);
+				}
+			}
+
+			// Re-layout the container without the removed streams
+			if (accessEntered) {
+				OT_LayoutContainer.layout();
+			}
+
+		}
+ 
+		/*
+		If you un-comment the call to TB.addEventListener("exception", exceptionHandler) above, OpenTok calls the
+		exceptionHandler() method when exception events occur. You can modify this method to further process exception events.
+		If you un-comment the call to TB.setLogLevel(), above, OpenTok automatically displays exception event messages.
+		*/
+		function exceptionHandler(event) {
+			alert("Exception: " + event.code + "::" + event.message);
+		}
+ 
+		//--------------------------------------
+		//  HELPER METHODS
+		//--------------------------------------
+ 
+		function publishStream() {
+			// Make up an id for our publisher
+			var divId = 'opentok_publisher';
+
+			// Pass in TRUE since this is a publisher
+			OT_LayoutContainer.addStream(divId, true);
+
+			var publisher = session.publish(divId);
+			publisher.addEventListener("accessAllowed", accessAllowedHandler);
+			publisher.addEventListener("accessDenied", accessDeniedHandler);
+		}
+
+		function accessAllowedHandler() {
+			accessEntered = true;
+
+			OT_LayoutContainer.layout();
+		}
+
+		function accessDeniedHandler() {
+			accessEntered = true;
+
+			OT_LayoutContainer.removeStream('opentok_publisher');
+
+			OT_LayoutContainer.layout();
+		}
+
+		function subscribeToStreams(streams) {
+			// For each stream
+			for (var i = 0; i < streams.length; i++) {
+				// Check if this is the stream that I am publishing, and if so do not subscribe.
+				if (streams[i].connection.connectionId != session.connection.connectionId) {
+					// Make a unique div id for this stream
+					var divId = 'stream_' + streams[i].streamId;
+
+					// Pass in FALSE since this is a subscriber
+					OT_LayoutContainer.addStream(divId, false);
+
+					session.subscribe(streams[i], divId);				
+				}
+			}
+		}
+ 
+	</script> 
+
+<h1><%= @theme_chat.name %></h1>
+	<div>
+    <p><%= @theme_chat.description %></p>
+    </div>
+	<div id="links"> 
+       	<input type="button" value="Connect" id ="connectLink" onClick="javascript:connect()" /> 
+	</div> 
+	<div id="streamContainer" style="background: black;"></div> 

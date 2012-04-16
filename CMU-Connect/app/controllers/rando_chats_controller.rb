@@ -69,7 +69,7 @@ before_filter :login_required
 	 UserMailer.exchange(user1,user2).deliver
          UserMailer.exchange(user2,user1).deliver
        end
-       @rando_chat.update_attributes(:u1_id => nil, :u2_id => nil)
+       #@rando_chat.update_attributes(:u1_id => nil, :u2_id => nil)
      end
     if params[:next] == "true"
       redirect_to :action => "create"

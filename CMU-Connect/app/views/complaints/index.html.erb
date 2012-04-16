@@ -2,13 +2,14 @@
 
 <table>
   <tr>
-    <th>Username</th>
-	<th>Description</th>
-    
+    <th>Reported User</th>
+    <th>Submitted By</th>
+    <th>Description</th>
   </tr>
   <% for complaint in @complaints %>
     <tr>
-	  <td><%= complaint.user.first_name %></td>
+	  <td><%= complaint.to_user %></td>
+	  <td><%= complaint.from_user %></td>
 	  <td><%= complaint.description %></td> 
 	  <td><%= link_to "Show", complaint %></td>
       <td><%= link_to "Destroy", complaint, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -29,7 +29,7 @@
 			session.addEventListener('streamDestroyed', streamDestroyedHandler);
 
 			// Initialize the layout container
-			OT_LayoutContainer.init("streamContainer", 500, 340); 
+			OT_LayoutContainer.init("streamContainer", 800, 544); 
 		}
  
 		//--------------------------------------
@@ -146,9 +146,9 @@
  
 	</script> 
 
-<h1>OpenTok OT_LayoutContainer.js Example</h1>
+<h1><%= @conference.name %></h1>
 	<div>
-    	<p>The LayoutContainer class optimizes the layout of streams to fit within a specified area.  To see this in action, press Connect and then copy and paste this url into a new browser tab and Connect again to see the streams dynamically resize as more are added and removed.</p>
+    <p><%= @conference.description %></p>
     </div>
 	<div id="links"> 
        	<input type="button" value="Connect" id ="connectLink" onClick="javascript:connect()" /> 

@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag "tokbox_professional_layout", :media => "all" %>
+<%= javascript_include_tag "tokbox_professional_layout" %>
+<h1>Theme: <%= @theme_chat.name %></h1>
+<h4><%= @theme_chat.description %></h4>
+
+
+<div id = "videobox">
+        <h2>You:</h2>
+
+ <script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
+        <script type="text/javascript">
+                var apiKey = 11368202; 
+                var sessionId = "<%= @theme_chat.sessionId %>"; 
+                var token = "<%= @tok_token %>"; 
+
+
+                var session = TB.initSession(sessionId);
+                TB.addEventListener('exception', exceptionHandler);
+
+                //Video chat event listeners
+                session.addEventListener('sessionConnected', sessionConnectedHandler);
+                session.addEventListener('streamCreated', streamCreatedHandler);
+                session.addEventListener('streamDestroyed', streamDestroyedHandler);
+
+                session.connect(apiKey,token);
+</script>
+
+</div>
+
+

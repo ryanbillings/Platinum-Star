@@ -61,6 +61,10 @@ h2 {
 
 }
 
+.ec-next-month {
+  text-align: right;
+}
+
 
 /* Containers */
 .ec-body {
