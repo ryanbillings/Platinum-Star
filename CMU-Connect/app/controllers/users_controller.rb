@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_filter :login_required, :except => [:new, :create]
+  load_and_authorize_resource
+  def index
+    @users = User.all
+  end
 
   def new
     @user = User.new
@@ -28,11 +32,19 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    if current_user.role == "default"
+      @user = current_user
+    elsif current_user.role == "admin"
+      @user = User.find_by_id(params[:id])
+    end
   end
 
   def update
-    @user = current_user
+    if current_user.role == "default"
+      @user = current_user
+    elsif current_user.role == "admin"
+      @user = User.find_by_id(params[:id])
+    end
     if @user.update_attributes(params[:user])
       redirect_to :welcome, :notice => "Your account has been updated."
     else

@@ -1,5 +1,6 @@
 class ConferencesController < ApplicationController
  before_filter :login_required
+ load_and_authorize_resource
   def index
     @conferences = Conference.all
   end

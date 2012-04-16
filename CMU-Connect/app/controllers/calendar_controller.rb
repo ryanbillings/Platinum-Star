@@ -1,5 +1,7 @@
 class CalendarController < ApplicationController
  before_filter :login_required
+ authorize_resource :class => false
+
   def index
     @month = (params[:month] || (Time.zone || Time).now.month).to_i
     @year = (params[:year] || (Time.zone || Time).now.year).to_i
