@@ -5,6 +5,7 @@ class CreateSurveys < ActiveRecord::Migration
       t.date :end_date
       t.timestamps
     end
+		
   end
 
   def self.down

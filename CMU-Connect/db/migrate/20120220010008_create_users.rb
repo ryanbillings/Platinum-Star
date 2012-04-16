@@ -14,8 +14,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :gender
       t.timestamps
     end
-  end
+User.create :username => "JongT", :first_name => "Jonghyun", :last_name => "Thom", :password => "test"
 
+	end
+
+  
+  
   def self.down
     drop_table :users
   end

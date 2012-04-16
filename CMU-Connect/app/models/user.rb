@@ -16,11 +16,7 @@ class User < ActiveRecord::Base
   def name
     return "#{self.first_name} #{self.last_name}"
   end  
-
-  def roles
-    return ROLES
-  end  
-  
+ 
   attr_accessor :password
   before_save :prepare_password
   validates_presence_of :username

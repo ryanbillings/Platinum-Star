@@ -1,6 +1,18 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+
+
+  should have_many :complaints
+  should have_many :user_confs
+  should have_many(:conferences).through(:user_confs)
+  should have_many :survey_users
+  should have_many (:survey), :through => :survey_users
+  
+
+
+
+
   def new_user(attributes = {})
     attributes[:username] ||= 'foo'
     attributes[:email] ||= 'foo@example.com'
