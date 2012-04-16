@@ -10,7 +10,6 @@ gem 'opentok'
 gem 'nifty-generators'
 
 gem 'cancan'
-gem 'activeadmin'
 
 gem 'will_paginate'
 gem 'bcrypt-ruby', :require => 'bcrypt'

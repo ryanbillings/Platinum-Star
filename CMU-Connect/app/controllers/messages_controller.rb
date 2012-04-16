@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_filter :login_required 
+  load_and_authorize_resource
   def index
     @messages = Array.new
     @survey = Survey.where("start_date <= ? AND end_date >= ?",Date.today,Date.today).first

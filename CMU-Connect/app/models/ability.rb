@@ -20,12 +20,14 @@ class Ability
       cannot :manage, Complaint
       can :create, Complaint
       cannot :manage, Survey
+      cannot :create, Survey
       can :show, Survey
       cannot :manage, ThemeChat
       can :show, ThemeChat
       cannot :index, ThemeChat
     elsif user.role? == "banned"
 	  cannot :manage, :all
+      cannot :read, :all
     end
       
   

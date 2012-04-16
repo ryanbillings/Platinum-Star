@@ -14,6 +14,7 @@ GEM
       rack-cache (~> 1.1)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.2)
+<<<<<<< HEAD
     activeadmin (0.4.3)
       bourbon (>= 1.0.0)
       devise (>= 1.1.2)
@@ -25,6 +26,8 @@ GEM
       meta_search (>= 0.9.2)
       rails (>= 3.0.0)
       sass (>= 3.1.0)
+=======
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     activemodel (3.2.1)
       activesupport (= 3.2.1)
       builder (~> 3.0.0)
@@ -39,11 +42,16 @@ GEM
     activesupport (3.2.1)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+<<<<<<< HEAD
     annotate (2.4.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1-x86-mingw32)
     bourbon (1.4.0)
       sass (>= 3.1)
+=======
+    arel (3.0.2)
+    bcrypt-ruby (3.0.1)
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     builder (3.0.0)
     cancan (1.6.7)
     client_side_validations (3.1.4)
@@ -55,16 +63,12 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.2.0)
-    devise (2.0.4)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.0.3)
-      railties (~> 3.1)
-      warden (~> 1.1.1)
+    coffee-script-source (1.3.1)
     erubis (2.7.0)
     event-calendar (2.3.3)
     execjs (1.3.0)
       multi_json (~> 1.0)
+<<<<<<< HEAD
     factory_girl (3.0.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (3.0.0)
@@ -76,9 +80,12 @@ GEM
     formtastic (2.1.1)
       actionpack (~> 3.0)
     has_scope (0.5.1)
+=======
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     hike (1.2.1)
     hirb (0.6.2)
     i18n (0.6.0)
+<<<<<<< HEAD
     inherited_resources (1.3.1)
       has_scope (~> 0.5.0)
       responders (~> 0.6)
@@ -91,27 +98,36 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+=======
+    journey (1.0.3)
+    jquery-rails (2.0.2)
+      railties (< 5.0, >= 3.2.0)
+      thor (~> 0.14)
+    json (1.6.6)
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta_search (1.1.3)
-      actionpack (~> 3.1)
-      activerecord (~> 3.1)
-      activesupport (~> 3.1)
-      polyamorous (~> 0.5.0)
     metaclass (0.0.1)
     mime-types (1.18)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
+<<<<<<< HEAD
     multi_json (1.2.0)
+=======
+    multi_json (1.3.1)
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     nested_form (0.2.0)
     net-ldap (0.3.1)
     nifty-generators (0.4.6)
     opentok (0.0.5)
+<<<<<<< HEAD
     orm_adapter (0.0.7)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
+=======
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     polyglot (0.3.3)
     populator3 (0.2.7)
     rack (1.4.1)
@@ -139,8 +155,11 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+<<<<<<< HEAD
     responders (0.9.1)
       railties (~> 3.1)
+=======
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     sass (3.1.15)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -154,28 +173,41 @@ GEM
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
+<<<<<<< HEAD
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5-x86-mingw32)
+=======
+      tilt (!= 1.3.0, ~> 1.1)
+    sqlite3 (1.3.5)
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+<<<<<<< HEAD
     tzinfo (0.3.32)
+=======
+    tzinfo (0.3.33)
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
-    warden (1.1.1)
-      rack (>= 1.0)
     will_paginate (3.0.3)
     wirble (0.1.3)
 
 PLATFORMS
+<<<<<<< HEAD
   x86-mingw32
 
 DEPENDENCIES
   activeadmin
   annotate
+=======
+  ruby
+
+DEPENDENCIES
+>>>>>>> a5d9e0429f85b4ddb8f9eeb223ded560090cccab
   bcrypt-ruby
   cancan
   client_side_validations
