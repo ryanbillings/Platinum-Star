@@ -21,11 +21,11 @@ CMUConnect::Application.routes.draw do
   match 'signup' => 'users#new', :as => :signup
 
   match 'logout' => 'sessions#destroy', :as => :logout
-
+  match 'password_reset' => 'home#password_reset', :as => :password_reset
   match 'login' => 'sessions#new', :as => :login
-
+  match 'reset' => 'home#reset'
   match 'welcome' => 'home#welcome', :as => :welcome
-  
+  match 'reset_all' => 'home#reset_all', :as => :reset_all  
   match 'landing' => 'home#landing', :as => :landing
   
   match 'professional' => 'messages#professional', :as => :professional

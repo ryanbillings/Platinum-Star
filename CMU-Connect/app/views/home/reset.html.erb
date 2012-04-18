@@ -1,0 +1,8 @@
+<%= form_tag :action => :password_reset do %>
+  <h2>Please enter your Andrew ID</h2>
+   <p>
+    <%= label_tag :andrew, "Andrew" %><br />
+    <%= text_field_tag :andrew, params[:andrew] %>
+  </p>
+<p><%= submit_tag 'Reset Password' %></p>
+<% end %>

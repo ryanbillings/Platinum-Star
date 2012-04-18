@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
     return ucs
   end
 
+  def self.random_password
+    rand(36**16).to_s(36)
+  end
+
   # login can be either username or email address
   def self.authenticate(login, pass)
     user = find_by_username(login) || find_by_email(login)

@@ -25,6 +25,7 @@ class Ability
       cannot :index, ThemeChat
       cannot :index, User
       cannot :admin, :home
+      cannot :reset_all, :home
     elsif user.role? == "banned"
 	  cannot :manage, :all
       cannot :read, :all
@@ -33,8 +34,10 @@ class Ability
       cannot :destroy, :all
       cannot :index, :calendar
       cannot :manage, User
+      cannot :reset_all, :home
      else
       can :create, User
+      cannot :reset_all, :home
     end
       
   

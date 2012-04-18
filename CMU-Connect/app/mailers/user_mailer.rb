@@ -7,4 +7,9 @@ class UserMailer < ActionMailer::Base
     mail(:to => @userTo.email, :subject => "CMUConnect Contact Information")
   end
 
+  def password_reset(email,password)
+    @email = email
+    @password = password
+    mail(:to => @email, :subject => "CMU Password Reset")
+  end
 end
