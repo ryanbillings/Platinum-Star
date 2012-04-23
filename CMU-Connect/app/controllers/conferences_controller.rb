@@ -42,7 +42,7 @@ class ConferencesController < ApplicationController
         uc.user_id = user.id
 	uc.confirmed = false
 	#We should add a mailer here..something like
-	#UserMailer.deliver(.....)
+	UserMailer.invitation(user,@conference).deliver
       end
     end
   

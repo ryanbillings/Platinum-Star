@@ -12,4 +12,11 @@ class UserMailer < ActionMailer::Base
     @password = password
     mail(:to => @email, :subject => "CMU Password Reset")
   end
+
+  def invitation(userTo, conference)
+    @userTo = userTo
+    @conference = conference
+    mail(:to => @userTo.email, :subject => "CMUConnect Conference Invitation")
+  end
+
 end

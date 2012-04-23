@@ -42,7 +42,13 @@
 		see http://www.tokbox.com/opentok/build/tutorials/helloworld.html#localTest
 		*/
 		function connect() {
-			session.connect(apiKey, token);
+                        var subscriberBox = document.getElementById("streamContainer");
+			if (subscriberBox.children.length > 3){
+			   alert("Maximum Capacity");
+			}
+                        else {
+			  session.connect(apiKey, token);
+                        }
 		}
  
 		function disconnect() {
