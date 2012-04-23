@@ -9,9 +9,8 @@ class SurveyTest < ActiveSupport::TestCase
   
   should have_many :topics
   should have_many :survey_users
-  should have_many (:users).through(:survey_users)
+  should have_many :users
   
-  should allow_value("Presidential Debate").for(:topic)
   
   
 end

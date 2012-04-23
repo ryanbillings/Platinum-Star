@@ -4,4 +4,8 @@ class TopicTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-end
+  
+  should belong_to :survey
+  should allow_value("Presidential Debate").for(:name)
+
+  end
