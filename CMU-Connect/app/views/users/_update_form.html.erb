@@ -34,7 +34,13 @@
     <div class="bold"><%= f.label :password_confirmation, "Confirm Password" %></div>
     <%= f.password_field :password_confirmation %>
   </p>
-  <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>	
+  <% if current_user && current_user.role == "admin" %>
+  <p>
+    <%= f.label :role %><br />
+    <%= f.select :role, User::ROLES %>
+  </p>
+  <% end %>  
+<p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>	
 <% end %>
 
 

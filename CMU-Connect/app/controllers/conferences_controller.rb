@@ -1,5 +1,6 @@
 class ConferencesController < ApplicationController
  before_filter :login_required
+ load_and_authorize_resource
   def index
     @conferences = Conference.all
   end
@@ -41,7 +42,7 @@ class ConferencesController < ApplicationController
         uc.user_id = user.id
 	uc.confirmed = false
 	#We should add a mailer here..something like
-	#UserMailer.deliver(.....)
+	UserMailer.invitation(user,@conference).deliver
       end
     end
   

@@ -10,11 +10,11 @@
 </p>
 <p>
   <strong>Start Date:</strong>
-  <%= @theme_chat.start_date %>
+  <%= @theme_chat.start_date.strftime("%B %d, %Y") %>
 </p>
 <p>
   <strong>End Date:</strong>
-  <%= @theme_chat.end_date %>
+  <%= @theme_chat.end_date.strftime("%B %d, %Y") %>
 </p>
 <p>
   <strong>Sessionid:</strong>

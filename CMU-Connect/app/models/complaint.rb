@@ -1,11 +1,16 @@
 class Complaint < ActiveRecord::Base
 
+<<<<<<< HEAD
 belongs_to :user
 
 
   attr_accessible :to_user, :from_user, :description, :rando_chat_id
   belongs_to :rando_chat
 
+=======
+  attr_accessible :to_user, :from_user, :description, :rando_chat_id
+  belongs_to :rando_chat
+>>>>>>> 9e3c735654134c47412fff73092ca3cc72d1786f
   before_save :ban_user
 
   def ban_user

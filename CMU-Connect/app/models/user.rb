@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :password, :password_confirmation, :andrew, :first_name, :last_name
+  attr_accessible :username, :email, :role, :password, :password_confirmation, :andrew, :first_name, :last_name
 
   has_many :user_confs
   has_many :conferences, :through => :user_confs 
@@ -16,8 +16,7 @@ class User < ActiveRecord::Base
   def name
     return "#{self.first_name} #{self.last_name}"
   end  
-
-  
+ 
   attr_accessor :password
   before_save :prepare_password
   validates_presence_of :username
@@ -31,6 +30,10 @@ class User < ActiveRecord::Base
   def invitations
     ucs = UserConf.where("user_id = ? AND confirmed = ?",self.id,false).all
     return ucs
+  end
+
+  def self.random_password
+    rand(36**16).to_s(36)
   end
 
   # login can be either username or email address

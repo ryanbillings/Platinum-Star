@@ -1,0 +1,15 @@
+Dear <%= @userTo.name %>,
+
+You have been invited to a conference.
+
+Name : <%= @conference.name %>
+Host : <%= User.find_by_id(@conference.host_id).name %>
+Description : <%= @conference.description %>
+Time:  <%= @conference.start_time.strftime("%l:%M%P") %> - <%= @conference.end_time.strftime("%l:%M%P") %>
+
+
+Please log in to our site and confirm your attendence.
+
+Thanks,
+CMUConnect Staff
+ 

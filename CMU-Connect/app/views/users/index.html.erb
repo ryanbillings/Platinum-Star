@@ -1,0 +1,5 @@
+<ul>
+<% for user in @users %>
+  <li><%= link_to user.andrew, edit_user_path(user) %></li>
+<% end %>
+</ul>

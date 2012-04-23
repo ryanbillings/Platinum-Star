@@ -54,12 +54,18 @@
 		//--------------------------------------
  
 		function sessionConnectedHandler(event) {
-		    // Publish my stream to the session
-			publishStream();			
-
-			// Subscribe to all streams currently in the Session
-			subscribeToStreams(event.streams);
-		}
+               
+                        if (event.connections.length > 9) {
+                          alert("Sorry, this room is completely filled");
+                          disconnect();
+                        }
+                        else {
+                        // Publish my stream to the session
+                        publishStream();                        
+                        // Subscribe to all streams currently in the Session
+                        subscribeToStreams(event.streams);
+                        }
+	        }
  
 		function streamCreatedHandler(event) {
 			// Subscribe to the newly created streams

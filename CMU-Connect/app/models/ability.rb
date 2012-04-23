@@ -9,13 +9,11 @@ class Ability
 	
 	
     if user.role? == "admin" 
-	 puts "admin"
           can :manage, :all
 	  can :index, Complaint
           can :manage, Survey
           can :manage, ThemeChat
     elsif user.role? == "default"
-	puts "default"
       can :manage, :all
       cannot :manage, Complaint
       can :create, Complaint
@@ -25,9 +23,21 @@ class Ability
       cannot :manage, ThemeChat
       can :show, ThemeChat
       cannot :index, ThemeChat
+      cannot :index, User
+      cannot :admin, :home
+      cannot :reset_all, :home
     elsif user.role? == "banned"
 	  cannot :manage, :all
       cannot :read, :all
+      cannot :create, :all
+      cannot :edit, :all
+      cannot :destroy, :all
+      cannot :index, :calendar
+      cannot :manage, User
+      cannot :reset_all, :home
+     else
+      can :create, User
+      cannot :reset_all, :home
     end
       
   
