@@ -7,10 +7,8 @@
 	<% end %>
         <% if @theme_chat %>
 	<%= link_to "/theme_chat/video/#{@theme_chat.id}" do %>
-		<div class="green_button">
-                <h4><%= @theme_chat.name %></h4>
-                <p><%= @theme_chat.description %></p>
-	        <%= image_tag("random.png") %> Join Theme Chat!
+		<div class="blue_button">
+	        <strong><%= @theme_chat.name %></strong> <br/>Join Theme Chat!
 		</div>
 	<% end %>
         <% end %>
@@ -19,6 +17,7 @@
          <!-- Surveys and Topics -->
            <% if @survey %>
 	   <div>
+		<h3>Current Theme Chat Polls:</h3>
              <ul>
              <% for topic in @topics %>     
             <!-- If a user has voted, show them the results -->
