@@ -42,13 +42,7 @@
 		see http://www.tokbox.com/opentok/build/tutorials/helloworld.html#localTest
 		*/
 		function connect() {
-                        var subscriberBox = document.getElementById("streamContainer");
-			if (subscriberBox.children.length > 3){
-			   alert("Maximum Capacity");
-			}
-                        else {
-			  session.connect(apiKey, token);
-                        }
+                          session.connect(apiKey, token);
 		}
  
 		function disconnect() {
@@ -60,11 +54,16 @@
 		//--------------------------------------
  
 		function sessionConnectedHandler(event) {
-		    // Publish my stream to the session
+                        if (event.connections.length > 9) {
+                          alert("Sorry, this room is completely filled");
+                          disconnect();
+                        }
+                        else {
+		        // Publish my stream to the session
 			publishStream();			
-
 			// Subscribe to all streams currently in the Session
 			subscribeToStreams(event.streams);
+                        }
 		}
  
 		function streamCreatedHandler(event) {
