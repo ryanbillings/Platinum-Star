@@ -11,8 +11,8 @@
     <tr>
       <td><%= theme_chat.name %></td>
       <td><%= theme_chat.description %></td>
-      <td><%= theme_chat.start_date %></td>
-      <td><%= theme_chat.end_date %></td>
+      <td><%= theme_chat.start_date.strftime("%B %d, %Y") %></td>
+      <td><%= theme_chat.end_date.strftime("%B %d, %Y") %></td>
       <td><%= link_to "Show", theme_chat %></td>
       <td><%= link_to "Edit", edit_theme_chat_path(theme_chat) %></td>
       <td><%= link_to "Destroy", theme_chat, :confirm => 'Are you sure?', :method => :delete %></td>

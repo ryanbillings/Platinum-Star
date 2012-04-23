@@ -2,11 +2,11 @@
 
 <p>
   <strong>Start Date:</strong>
-  <%= @survey.start_date %>
+  <%= @survey.start_date.strftime("%B %d, %Y") %>
 </p>
 <p>
   <strong>End Date:</strong>
-  <%= @survey.end_date %>
+  <%= @survey.end_date.strftime("%B %d, %Y") %>
 </p>
 <div>
   <h3>Topics:</h3>

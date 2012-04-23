@@ -7,8 +7,8 @@
   </tr>
   <% for survey in @surveys %>
     <tr>
-      <td><%= survey.start_date %></td>
-      <td><%= survey.end_date %></td>
+      <td><%= survey.start_date.strftime("%B %d, %Y") %></td>
+      <td><%= survey.end_date.strftime("%B %d, %Y") %></td>
       <td><%= link_to "Show", survey %></td>
       <td><%= link_to "Edit", edit_survey_path(survey) %></td>
       <td><%= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete %></td>
