@@ -13,7 +13,7 @@ CMUConnect::Application.routes.draw do
   match '/conference/video/:id' => 'conferences#video', :as => :join_conference
   match '/theme_chat/video/:id' => 'theme_chats#video'
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
-  match 'conferences/:id/confirm' => 'conferences#confirm', :as => :confirm
+  match 'invitations/:id/confirm' => 'invitations#confirm', :as => :confirm
   match 'invitations/:id/invite' => 'invitations#invite'
   match 'invitations/create' => 'invitations#create'
   match 'invitations/autocomplete' => 'invitations#autocomplete'  

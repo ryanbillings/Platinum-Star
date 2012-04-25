@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     @user.role = "default"
     if @user.save
       session[:user_id] = @user.id
+      $logged_in_user.push(@user.id)
       redirect_to :welcome, :notice => "Thank you for signing up! You are now logged in."
     else
       render :action => 'new'

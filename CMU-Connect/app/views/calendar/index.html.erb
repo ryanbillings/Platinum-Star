@@ -18,7 +18,7 @@
 		      <p><%= link_to "#{conf.name}", conf %></p>
 		      <p><%= conf.start_time.strftime("%B %d, %Y at %l:%M%P") %>-<%= conf.start_time.strftime("%l:%M%P") %></p>
 		      <p>Hosted by <%= User.find(conf.host_id).first_name%> <%=User.find(conf.host_id).last_name %></p>
-		      <p><%= link_to "Confirm Invite", "conferences/#{notification.id}/confirm" %></p>
+		      <p><%= link_to "Confirm Invite", "invitations/#{notification.id}/confirm" %></p>
 		          <br />
 		    <% end %>
 		</div>
