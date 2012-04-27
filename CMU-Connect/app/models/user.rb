@@ -1,13 +1,12 @@
 class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :role, :password, :password_confirmation, :andrew, :first_name, :last_name
-
+  attr_accessible :username, :email, :role, :password, :password_confirmation, :andrew, :first_name, :last_name, :phone, :carrier, :receive_text
   has_many :user_confs
   has_many :conferences, :through => :user_confs 
   has_many :survey_users, :dependent => :destroy
   has_many :surveys, :through => :survey_users
   ROLES = %w[admin default banned]
-  
+  CARRIERS = %w[AT&T Verizon T-Mobile Virgin Sprint]  
   
   def role?
     return self.role    
@@ -16,7 +15,21 @@ class User < ActiveRecord::Base
   def name
     return "#{self.first_name} #{self.last_name}"
   end  
- 
+
+  def get_carrier_email
+    if self.carrier == "AT&T"
+      return "txt.att.net"
+    elsif self.carrier == "Verizon"
+      return "vtext.com" 
+    elsif self.carrier == "T-Mobile"
+      return "tmomail.net"
+    elsif self.carrier == "Sprint"
+     return "messaging.sprintpcs.com"
+    elsif self.carrier == "Virgin"
+     return "vmobl.com"
+    end
+  end
+
   attr_accessor :password
   before_save :prepare_password
   validates_presence_of :username

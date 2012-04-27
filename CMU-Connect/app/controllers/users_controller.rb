@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     @user.grade = andrew_user.grade
     @user.major = andrew_user.department
     @user.role = "default"
+    @user.receive_text = false
     if @user.save
       session[:user_id] = @user.id
       $logged_in_user.push(@user.id)

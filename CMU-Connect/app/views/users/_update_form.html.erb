@@ -26,6 +26,19 @@
     <div class="bold"><%= f.label :username %></div>
     <%= f.text_field :username %>
   </p>
+   <p>
+    <%= f.label :phone, "Phone Number" %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :carrier, "Carrier (e.g. AT&T, Verizon)" %><br />
+    <%= f.select :carrier, User::CARRIERS %>
+  </p>
+  <p>
+    <%= f.label :receive_text, "Would you like to receive text notifications of conferences?" %><br />
+    <%= f.check_box :receive_text %>
+  </p>
+
   <p>
     <div class="bold"><%= f.label :password %></div>
     <%= f.password_field :password %>

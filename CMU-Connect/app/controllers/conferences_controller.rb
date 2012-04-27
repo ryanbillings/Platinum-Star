@@ -43,7 +43,10 @@ class ConferencesController < ApplicationController
 	uc.confirmed = false
 	#We should add a mailer here..something like
 	UserMailer.invitation(user,@conference).deliver
-      end
+        if user.receive_text == true
+          UserMailer.text_alert(user,@conference).deliver
+        end
+       end
     end
   
     # Professional 

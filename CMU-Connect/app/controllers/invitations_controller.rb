@@ -36,6 +36,10 @@ class InvitationsController < ApplicationController
     @user_conf.user_id = user.id
     @user_conf.confirmed = false
     UserMailer.invitation(user,@user_conf).deliver
+    if user.receive_text == true
+       UserMailer.text_alert(user,@conference).deliver
+    end
+
     if @user_conf.save
       redirect_to conference, :notice => "Successfully sent Invitation"
     else

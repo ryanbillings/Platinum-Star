@@ -19,4 +19,9 @@ class UserMailer < ActionMailer::Base
     mail(:to => @userTo.email, :subject => "CMUConnect Conference Invitation")
   end
 
+  def text_alert(userTo, conference)
+    @userTo = userTo
+    @conference = conference
+    mail(:to => "#{@userTo.phone}@#{@userTo.get_carrier_email}", :subject => "CMUConnect")
+  end
 end

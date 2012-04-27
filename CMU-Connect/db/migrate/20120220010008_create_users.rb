@@ -12,9 +12,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :major
       t.string :grade
       t.string :gender
+      t.integer :phone
+      t.string :carrier
+      t.boolean :receive_text
       t.timestamps
     end
-User.create :username => "JongT", :first_name => "Jonghyun", :last_name => "Thom", :password => "test"
+User.create :username => "JongT", :first_name => "Jonghyun", :last_name => "Thom", :password => "test", :role => "admin",:andrew=>"jthom"
 
 	end
 

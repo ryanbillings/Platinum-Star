@@ -113,6 +113,9 @@ ActiveRecord::Schema.define(:version => 20120320225626) do
     t.string   "major"
     t.string   "grade"
     t.string   "gender"
+    t.integer  "phone"
+    t.string   "carrier"
+    t.boolean  "receive_text"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
