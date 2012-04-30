@@ -51,14 +51,14 @@ class ConferencesController < ApplicationController
   
     # Professional 
     if @conference.professional
-      if @conference.public
+      if @conference.public == true
         @conference.color = "#FF1600"
       else
         @conference.color = "#990900"
       end
     # Academic
     else
-      if @conference.public
+      if @conference.public == true
         @conference.color = "#000CFF"
       else
         @conference.color = "#001299"
@@ -96,9 +96,14 @@ class ConferencesController < ApplicationController
 
   def destroy
     @conference = Conference.find(params[:id])
+    if @conference.host_id != current_user.id
+      redirect_to :welcome, :notice => "You do not have permission to do that"
+      return
+    else
     @conference.destroy
     redirect_to conferences_url, :notice => "Successfully destroyed conference."
-  end
+    end 
+ end
 
   def video
     @conference = Conference.find(params[:id])

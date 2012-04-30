@@ -1,5 +1,5 @@
 <%= javascript_include_tag "tokbox_professional_layout" %>
-<script src="http://static.opentok.com/v0.91/js/TB.min.js"></script>
+<script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
 <script type="text/javascript" charset="utf-8">	
                 var apiKey = 11368202; 
                 var sessionId = "<%= @theme_chat.sessionId %>"; 
@@ -158,5 +158,6 @@
     </div>
 	<div id="links"> 
        	<input type="button" value="Connect" id ="connectLink" onClick="javascript:connect()" /> 
+       	<input type="button" value="Disconnect" id ="disconnectLink" onClick="javascript:disconnect()" /> 
 	</div> 
 	<div id="streamContainer" style="background: black;"></div> 

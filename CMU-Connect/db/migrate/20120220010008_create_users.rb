@@ -12,7 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :major
       t.string :grade
       t.string :gender
-      t.integer :phone
+      t.string :phone
       t.string :carrier
       t.boolean :receive_text
       t.timestamps

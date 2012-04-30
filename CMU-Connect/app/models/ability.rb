@@ -22,6 +22,7 @@ class Ability
       can :show, Survey
       cannot :manage, ThemeChat
       can :show, ThemeChat
+      can :video, ThemeChat
       cannot :index, ThemeChat
       cannot :index, User
       cannot :admin, :home

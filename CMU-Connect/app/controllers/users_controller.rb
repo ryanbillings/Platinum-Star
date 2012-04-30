@@ -24,10 +24,14 @@ class UsersController < ApplicationController
     @user.major = andrew_user.department
     @user.role = "default"
     @user.receive_text = false
+    pass = User.random_password
+    @user.password = pass
+    
     if @user.save
-      session[:user_id] = @user.id
-      $logged_in_user.push(@user.id)
-      redirect_to :welcome, :notice => "Thank you for signing up! You are now logged in."
+      #session[:user_id] = @user.id
+      #$logged_in_user.push(@user.id)
+      UserMailer.password_reset(@user.email,@user.password).deliver
+      redirect_to :login, :notice => "Thank you for signing up! Please check your email for further instructions."
     else
       render :action => 'new'
     end

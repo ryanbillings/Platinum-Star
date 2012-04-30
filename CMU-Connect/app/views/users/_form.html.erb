@@ -12,6 +12,7 @@
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </p>
+<% if false %>
   <p>
     <%= f.label :password, "Password" %><br />
     <%= f.password_field :password, :id => "password" %>
@@ -20,7 +21,7 @@
     <%= f.label :password_confirmation, "Confirm Password" %><br />
     <%= f.password_field :password_confirmation %>
   </p>
-
+<% end %>
   <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>	
 <% end %>
 

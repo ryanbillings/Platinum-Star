@@ -35,9 +35,9 @@ class InvitationsController < ApplicationController
     @user_conf.andrew = user.andrew
     @user_conf.user_id = user.id
     @user_conf.confirmed = false
-    UserMailer.invitation(user,@user_conf).deliver
+    UserMailer.invitation(user,conference).deliver
     if user.receive_text == true
-       UserMailer.text_alert(user,@conference).deliver
+       UserMailer.text_alert(user,conference).deliver
     end
 
     if @user_conf.save

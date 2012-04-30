@@ -32,6 +32,12 @@ load_and_authorize_resource
     reported_user_name = reported_user.andrew
     @complaint.to_user = reported_user_name
     @complaint.from_user = current_user.andrew
+    complaints_counts = Complaint.find_all_by_to_user(reported_user_name)
+    if complaints_counts.nil? == false and complaints_counts.size >= 2
+      banned_user = User.find_by_andrew(@complaint.to_user)
+      banned_user.update_attribute(:role,"banned")
+    end
+
     if @complaint.save
       redirect_to :welcome, :notice => "Successfully reported user."
     else

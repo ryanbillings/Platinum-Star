@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_confirmation_of :password
   validates_length_of :password, :minimum => 4, :allow_blank => true
+  validates_format_of :phone, :with => /^[\d]{10}$/, :message => "should contain 10 numbers", :allow_blank => true
 
   def invitations
     ucs = UserConf.where("user_id = ? AND confirmed = ?",self.id,false).all
